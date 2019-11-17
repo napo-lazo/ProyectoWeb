@@ -1,0 +1,12 @@
+{
+  "name": "proyectoweb",
+  "version": "1.0.0",
+  "description": "Web development course's final proyect",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Jose Napoleon & Jose Roberto",
+  "license": "ISC"
+}

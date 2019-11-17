@@ -1,0 +1,27 @@
+
+*{
+    box-sizing: border-box;
+}
+
+.login{
+    border-radius: 20px;
+    margin: 5% 17%;
+    text-align: center;
+}
+
+#mainForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fields, select{
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 25%;
+}
+
+#radio{
+    width: 25%;
+    margin-bottom: 5px;
+}
