@@ -1,12 +1,39 @@
 
+/* 
+Color palette used:
+    
+    -Orange colors-
+    #FF9900
+    #FFC164
+    #FFB039
+    #C67600
+    #9B5D00
+    
+    -Blue colors-
+    #0D58A6
+    #5387BD
+    #316DAC
+    #094481
+    #063565
+*/
+
 *{
     box-sizing: border-box;
 }
 
+body{
+    background: whitesmoke;
+}
+
+h2 {
+    margin: 35px ;
+}
+
 .login{
     border-radius: 20px;
-    margin: 5% 17%;
+    margin: 5% 35%;
     text-align: center;
+    background: #FFC140;
 }
 
 #mainForm {
@@ -15,13 +42,13 @@
     align-items: center;
 }
 
-.fields, select{
+.fields, select, #registerAccount{
     margin-bottom: 10px;
-    padding: 5px;
-    width: 25%;
+    padding: 3%;
+    width: 80%;
 }
 
 #radio{
-    width: 25%;
-    margin-bottom: 5px;
+    width: 80%;
+    margin-bottom: 20px;
 }

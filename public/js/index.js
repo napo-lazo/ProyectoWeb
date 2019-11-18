@@ -1,4 +1,5 @@
 let registerBtn = $("#registerAccount");
+let toggleForm = $("#toggleForm");
 
 registerBtn.on("click", event =>{
     event.preventDefault();
@@ -39,4 +40,9 @@ registerBtn.on("click", event =>{
         }
     });
 
+});
+
+toggleForm.on("click", event =>{
+    event.preventDefault();
+    console.log("test");
 });
