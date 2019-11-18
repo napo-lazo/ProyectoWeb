@@ -13,6 +13,27 @@ let Account = mongoose.model("Account", accountSchema);
 
 let AccountList = {
 
+    //for debuging
+    getAll : function(){
+        return Account.find()
+                        .then(accounts =>{
+                            return accounts;
+                        })
+                        .catch(error =>{
+                            throw Error(error);
+                        })
+    },
+
+    post: function(newAccount){
+        return Account.create(newAccount)
+                        .then(account =>{
+                            return account;
+                        })
+                        .catch(error =>{
+                            throw Error(error);
+                        });
+    }
+
 };
 
 module.exports = {AccountList};

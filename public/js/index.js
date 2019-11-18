@@ -4,6 +4,7 @@ registerBtn.on("click", event =>{
     event.preventDefault();
 
     //TODO: validate inputs
+    //TODO: verify account doesnt already exists
 
     let newAccount = {
         username: $("#sign_up_User").val(),
@@ -19,6 +20,15 @@ registerBtn.on("click", event =>{
         newAccount["type"] = "Artist";
     }
 
-    //make call to insert in DB
+    $.ajax({
+        url: "/accounts",
+        method: "POST",
+        dataType: "JSON",
+        contentType: "application/json",
+        data: JSON.stringify(newAccount),
+        success: (result) =>{
+            console.log(result)
+        }
+    });
 
 });

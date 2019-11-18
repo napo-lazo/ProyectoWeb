@@ -2,6 +2,8 @@ let express = require("express");
 let morgan = require("morgan");
 let bodyParser = require("body-parser");
 let mongoose = require("mongoose");
+let {AccountList} = require("./model");
+let {DATABASE_URL, PORT} = require("./config");
 
 let app = express();
 let jsonParser = bodyParser.json();
@@ -11,6 +13,42 @@ app.use(express.static("public"));
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
+
+app.get("/accounts", (req, res) =>{
+    AccountList.getAll()
+                .then(accounts =>{
+                    return res.status(200).json(accounts);
+                })
+                .catch(error =>{
+                    res.statusMessage = "Something went wrong with the DB";
+                    return res.status(500).json({
+                        code: 500,
+                        message: "Something went wrong with the DB"
+                    })
+                });
+});
+
+app.post("/accounts", jsonParser, (req, res) => {
+
+    let json = {
+        username: req.body.username,
+        password: req.body.password,
+        city: req.body.city,
+        type: req.body.type,
+    };
+
+    AccountList.post(json)
+                    .then(post =>{
+                        return res.status(201).json(post);
+                    })
+                    .catch(err =>{
+                        res.statusMessage = "Something went wrong with the DB";
+                        return res.status(500).json({
+                            code: 500,
+                            message: "Something went wrong with the DB"
+                        })
+                    });
+});
 
 let server;
 
