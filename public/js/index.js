@@ -31,4 +31,12 @@ registerBtn.on("click", event =>{
         }
     });
 
+    $.ajax({
+        url: "/accounts",
+        method: "GET",
+        success: (result) =>{
+            console.log(result)
+        }
+    });
+
 });
