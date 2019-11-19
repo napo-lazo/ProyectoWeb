@@ -41,16 +41,14 @@ function validateInputs(){
 
 function verifyIfAccountExists(){
 
-    let json = {
-        username: $("#sign_up_User").val()
-    }
+    let value = $("#sign_up_User").val();
 
     $.ajax({
-        url: "/account",
+        url: "/account?",
         method: "GET",
-        dataType: "JSON",
-        contentType: "application/json",
-        data: JSON.stringify(json),
+        data:{
+            username: value
+        },
         success: (result) =>{
             console.log(result)
         }

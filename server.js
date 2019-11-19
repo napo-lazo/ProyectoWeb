@@ -28,11 +28,10 @@ app.get("/accounts", (req, res) =>{
                 });
 });
 
-app.get("/account", jsonParser, (req, res) =>{
-    let json = {
-        username = req.body.username
-    }
-    AccountList.verifyUserName(json)
+app.get("/account?", jsonParser, (req, res) =>{
+    let query = req.query.username
+
+    AccountList.verifyUserName(username)
                 .then(account =>{
                     return res.status(200).json({account});
                 })
