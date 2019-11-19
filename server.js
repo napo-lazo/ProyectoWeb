@@ -31,7 +31,7 @@ app.get("/accounts", (req, res) =>{
 app.get("/account", jsonParser, (req, res) =>{
     let query = req.body.username
 
-    AccountList.verifyUserName(query["username"])
+    AccountList.verifyUserName(query)
                 .then(account =>{
                     return res.status(200).json({account});
                 })

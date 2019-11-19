@@ -45,7 +45,8 @@ function verifyIfAccountExists(){
     let json = {
             username: value
         }
-    
+    console.log(json)
+
     $.ajax({
         url: "/account",
         method: "POST",
