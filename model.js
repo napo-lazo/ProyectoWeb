@@ -24,10 +24,10 @@ let AccountList = {
                         });
     },
 
-    verifyUserName: function(username){
-        return Account.findOne({username: username})
-                        .then(username =>{
-                            return username;
+    verifyUserName: function(user){
+        return Account.findOne({username: user})
+                        .then(user =>{
+                            return user;
                         })
                         .catch(error =>{
                             throw Error(error)
