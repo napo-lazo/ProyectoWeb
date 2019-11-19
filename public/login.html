@@ -9,22 +9,11 @@
 <body>
     <fieldset class="login">
         <div id="mainForm">
-            <h2>Create Account</h2>
+            <h2>Log in</h2>
             <input type="text" id="sign_up_User" class="fields" placeholder="Username">
-            <input type="text" id="password_User" class="fields" placeholder="Password">
-            <select id="user_City">
-                <option value="" disabled selected>Select your city</option>
-                <option value="Monterrey">Monterrey</option>
-                <option value="Cdmx">Ciudad de Mexico</option>
-            </select>
-            <span id="radio">
-                <input type="radio" name="type" id="user">
-                <label for="user">User</label>
-                <input type="radio" name="type" id="artist">
-                <label for="artist">Artist</label>
-            </span>
+            <input type="text" id="password_User" class="fields" placeholder="Password"></input>
             <input type="button" class="btn btn-primary" value="Register" id="registerAccount">
-            <p>Already have an account? <a href="login.html">Log in</a> </p>
+            <p>Don't have an account? <a href="" id="toggleForm">Create account</a></p>
         </div>
     </fieldset>
     <script 
@@ -32,6 +21,6 @@
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous">
     </script>
-    <script src="./js/index.js"></script>
+    <script src="./js/login.js"></script>
 </body>
 </html>
