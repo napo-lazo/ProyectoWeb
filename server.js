@@ -33,7 +33,7 @@ app.get("/account", jsonParser, (req, res) =>{
 
     AccountList.verifyUserName(query)
                 .then(account =>{
-                    return res.status(200).json({account});
+                    return res.status(200).json(account);
                 })
                 .catch(error =>{
                     res.statusMessage(500) = "Something went wrong with the DB";

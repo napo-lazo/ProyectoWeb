@@ -26,8 +26,8 @@ let AccountList = {
 
     verifyUserName: function(user){
         return Account.findOne(user)
-                        .then(user =>{
-                            return user;
+                        .then(result =>{
+                            return result;
                         })
                         .catch(error =>{
                             throw Error(error)
