@@ -46,7 +46,7 @@ function verifyIfAccountExists(){
     $.ajax({
         url: "/account",
         method: "GET",
-        data{
+        data:{
             username: value
         },
         success: (result) =>{
