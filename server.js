@@ -29,7 +29,7 @@ app.get("/accounts", (req, res) =>{
 });
 
 app.get("/account", jsonParser, (req, res) =>{
-    let query = req.body.username
+    let query = req.body
 
     AccountList.verifyUserName(query)
                 .then(account =>{
