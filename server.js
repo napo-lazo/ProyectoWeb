@@ -28,7 +28,7 @@ app.get("/accounts", (req, res) =>{
                 });
 });
 
-app.get("/accounts?", (req, res) =>{
+app.get("/account?", (req, res) =>{
     let query = req.query.username
 
     AccountList.verifyUserName(username)
