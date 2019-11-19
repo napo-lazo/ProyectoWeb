@@ -28,7 +28,7 @@ app.get("/accounts", (req, res) =>{
                 });
 });
 
-app.get("/account?", jsonParser, (req, res) =>{
+app.get("/account", jsonParser, (req, res) =>{
     let json = {
         username = req.body.username
     }
