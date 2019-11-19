@@ -3,7 +3,7 @@ let formBody = $("#mainForm");
 
 function validateInputs(){
     let username = $("#sign_up_User").val();
-    let password = $("#sign_up_Password").val();
+    let password = $("#password_User").val();
     let city = $("#user_City").val();
     let type = $("input[name=type]:checked");
     var isValid = true;
