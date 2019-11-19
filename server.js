@@ -30,9 +30,11 @@ app.get("/accounts", (req, res) =>{
 
 app.get("/account", jsonParser, (req, res) =>{
     let query = req.body
+    console.log(query)
 
     AccountList.verifyUserName(query)
                 .then(account =>{
+                    console.log(account)
                     return res.status(200).json(account);
                 })
                 .catch(error =>{
