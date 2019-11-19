@@ -44,11 +44,8 @@ function verifyIfAccountExists(){
     let value = $("#sign_up_User").val();
 
     $.ajax({
-        url: "/accounts",
+        url: "/accounts?" + value,
         method: "GET",
-        data: {
-            username: value
-        },
         success: (result) =>{
             console.log(result)
         }
@@ -60,7 +57,11 @@ registerBtn.on("click", event =>{
     event.preventDefault();
 
     let isValid = validateInputs();
-    verifyIfAccountExists();
+
+    if (isValid){
+        verifyIfAccountExists();
+    }
+    
 
     //TODO: verify account doesnt already exists
 
