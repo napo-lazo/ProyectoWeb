@@ -1,43 +1,85 @@
 let registerBtn = $("#registerAccount");
 let formBody = $("#mainForm");
 
+function validateInputs(){
+    let username = $("#sign_up_User").val();
+    let password = $("#sign_up_Password").val();
+    let city = $("#user_City").val();
+    let type = $("input[name=type]:checked");
+    var isValid = true;
+
+    if(username.trim().length == 0){
+        let aux = $(".alertSpot")[0];
+        $(aux).addClass("alerts");
+        $(aux).text("No username given");
+        isValid = false;
+    }
+
+    if(password.trim().length == 0){
+        let aux = $(".alertSpot")[1];
+        $(aux).addClass("alerts");
+        $(aux).text("No password given");
+        isValid = false;
+    }
+    
+    if(city == null){
+        let aux = $(".alertSpot")[2];
+        $(aux).addClass("alerts");
+        $(aux).text("No city selected");
+        isValid = false;
+    }
+
+    if(type.length == 0){
+        let aux = $(".alertSpot")[3];
+        $(aux).addClass("alerts");
+        $(aux).text("No type selected");
+        isValid = false;
+    }
+
+    return isValid;
+}
+
 registerBtn.on("click", event =>{
     event.preventDefault();
 
-    //TODO: validate inputs
+    let isValid = validateInputs();
+
     //TODO: verify account doesnt already exists
 
-    let newAccount = {
-        username: $("#sign_up_User").val(),
-        password: $("#password_User").val(),
-        city: $("#user_City").val(),
-    }
+    if(isValid){
 
-    let type = $("input[name=type]");
-    if (type[0].checked){
-        newAccount["type"] = "User";
-    }
-    else{
-        newAccount["type"] = "Artist";
-    }
-
-    $.ajax({
-        url: "/accounts",
-        method: "POST",
-        dataType: "JSON",
-        contentType: "application/json",
-        data: JSON.stringify(newAccount),
-        success: (result) =>{
-            console.log(result)
+        let newAccount = {
+            username: $("#sign_up_User").val(),
+            password: $("#password_User").val(),
+            city: $("#user_City").val(),
         }
-    });
 
-    $.ajax({
-        url: "/accounts",
-        method: "GET",
-        success: (result) =>{
-            console.log(result)
+        let type = $("input[name=type]");
+        if (type[0].checked){
+            newAccount["type"] = "User";
         }
-    });
+        else{
+            newAccount["type"] = "Artist";
+        }
+
+        // $.ajax({
+        //     url: "/accounts",
+        //     method: "POST",
+        //     dataType: "JSON",
+        //     contentType: "application/json",
+        //     data: JSON.stringify(newAccount),
+        //     success: (result) =>{
+        //         console.log(result)
+        //     }
+        // });
+
+        $.ajax({
+            url: "/accounts",
+            method: "GET",
+            success: (result) =>{
+                console.log(result)
+            }
+        });
+    }
 
 });

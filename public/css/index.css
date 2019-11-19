@@ -50,5 +50,12 @@ h2 {
 
 #radio{
     width: 80%;
-    margin-bottom: 20px;
+}
+
+.alerts{
+    display: flex;
+    align-items: flex-start;
+    color: red;
+    width: 80%;
+    margin-bottom: 10px;
 }
