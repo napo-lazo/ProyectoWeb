@@ -39,10 +39,28 @@ function validateInputs(){
     return isValid;
 }
 
+function verifyIfAccountExists(){
+
+    let value = $("#sign_up_User").val();
+
+    $.ajax({
+        url: "/accounts",
+        method: "GET",
+        data: {
+            username: value
+        },
+        success: (result) =>{
+            console.log(result)
+        }
+    });
+
+}
+
 registerBtn.on("click", event =>{
     event.preventDefault();
 
     let isValid = validateInputs();
+    verifyIfAccountExists();
 
     //TODO: verify account doesnt already exists
 
@@ -73,13 +91,13 @@ registerBtn.on("click", event =>{
         //     }
         // });
 
-        $.ajax({
-            url: "/accounts",
-            method: "GET",
-            success: (result) =>{
-                console.log(result)
-            }
-        });
     }
+    $.ajax({
+        url: "/accounts",
+        method: "GET",
+        success: (result) =>{
+            console.log(result)
+        }
+    });
 
 });

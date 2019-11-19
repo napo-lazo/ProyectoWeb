@@ -14,14 +14,24 @@ let Account = mongoose.model("Account", accountSchema);
 let AccountList = {
 
     //for debuging
-    getAll : function(){
+    getAll: function(){
         return Account.find()
                         .then(accounts =>{
                             return accounts;
                         })
                         .catch(error =>{
                             throw Error(error);
+                        });
+    },
+
+    verifyUserName: function(username){
+        return Account.findOne({username: username})
+                        .then(username =>{
+                            return username;
                         })
+                        .catch(error =>{
+                            throw Error(error)
+                        });
     },
 
     post: function(newAccount){

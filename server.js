@@ -28,6 +28,23 @@ app.get("/accounts", (req, res) =>{
                 });
 });
 
+app.get("/accounts?", (req, res) =>{
+    let query = req.query.username
+
+    AccountList.verifyUserName(username)
+                .then(account =>{
+                    return res.status(200).json({account});
+                })
+                .catch(error =>{
+                    res.statusMessage(500) = "Something went wrong with the DB";
+                    return res.status(500).json({
+                        code: 500,
+                        message: "Something went wrong with the DB"
+                    }) 
+                });
+
+});
+
 app.post("/accounts", jsonParser, (req, res) => {
 
     let json = {
