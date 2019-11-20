@@ -6,7 +6,8 @@ let accountSchema = mongoose.Schema({
 	username : { type : String },
     password : { type : String },
     city : { type : String },
-    type : { type : String }
+    type : { type : String },
+    votes : {type : Number}
 });
 
 let Account = mongoose.model("Account", accountSchema);
@@ -43,7 +44,6 @@ let AccountList = {
                             throw Error(error);
                         });
     }
-
 };
 
 module.exports = {AccountList};

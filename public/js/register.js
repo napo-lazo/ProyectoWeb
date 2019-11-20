@@ -73,17 +73,17 @@ function createAccount(){
     else{
         newAccount["type"] = "Artist";
     }
-
-    // $.ajax({
-    //     url: "/accounts",
-    //     method: "POST",
-    //     dataType: "JSON",
-    //     contentType: "application/json",
-    //     data: JSON.stringify(newAccount),
-    //     success: (result) =>{
-    //         console.log(result)
-    //     }
-    // });
+    newAccount["votes"] = 0;
+    $.ajax({
+        url: "/accounts",
+        method: "POST",
+        dataType: "JSON",
+        contentType: "application/json",
+        data: JSON.stringify(newAccount),
+        success: (result) =>{
+            console.log(result)
+        }
+     });
 }
 
 function verifyIfAccountExists(){

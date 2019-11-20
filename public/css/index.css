@@ -59,3 +59,18 @@ h2 {
     width: 80%;
     margin-bottom: 10px;
 }
+
+.flat{
+    display: flex;
+    border:1px solid black;
+}
+
+.hori{
+    width: 7%;
+    border-right: 1px solid black;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+  }
