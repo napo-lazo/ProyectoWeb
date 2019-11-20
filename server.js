@@ -29,6 +29,21 @@ app.get("/accounts", (req, res) =>{
                 });
 });
 
+app.post("/artist-Accounts", (req, res) => {
+
+    AccountList.getAllArtists()
+                .then(artists =>{
+                    return res.status(200).json(artists);
+                })
+                .catch(error =>{
+                    res.statusMessage = "Something went wrong with the DB";
+                    return res.status(500).json({
+                        code: 500,
+                        message: "Something went wrong with the DB"
+                    })
+                }); 
+});
+
 app.post("/account", jsonParser, (req, res) =>{
     let query = req.body
     console.log(query)

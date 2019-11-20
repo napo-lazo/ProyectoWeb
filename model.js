@@ -33,6 +33,16 @@ let AccountList = {
                         });
     },
 
+    getAllArtists: function(){
+        return Account.find({type:"Artist"})
+                        .then(artists =>{
+                            return artists;
+                        })
+                        .catch(error =>{
+                            throw Error(error)
+                        });
+    },
+
     verifyUserName: function(user){
         return Account.find(user)
                         .then(result =>{
