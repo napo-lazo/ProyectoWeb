@@ -74,7 +74,7 @@ loginBtn.on("click", event =>{
     var isValid = validateInputs();
     console.log(isValid)
     if(isValid){
-        isValid = verifyIfAccountExists;
+        isValid = verifyIfAccountExists();
     }
     if(isValid){
         console.log("Successful login")
