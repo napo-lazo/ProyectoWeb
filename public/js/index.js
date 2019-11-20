@@ -65,7 +65,6 @@ function verifyIfAccountExists(){
 
 loginBtn.on("click", event =>{
     event.preventDefault();
-    
     var isValid = validateInputs();
     if(isValid){
         verifyIfAccountExists()

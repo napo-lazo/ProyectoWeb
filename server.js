@@ -63,6 +63,48 @@ app.post("/account", jsonParser, (req, res) =>{
 
 });
 
+app.post("/likes",jsonParser,(req,res)=>{
+    let json = req.body;
+    let band = json["band"];
+    let user = json["user"];
+    let found = false;
+    AccountList.verifyLike(band)
+                    .then(likes =>{
+                        likes = likes[0]['votes'];
+                        likes.forEach(e =>{
+                            console.log(e);
+                            if(user == e){
+                               found=true;    
+                            }
+                        })
+                        if(!found){
+                            console.log("new like by: "+user);
+                            AccountList.addLike(user)
+                                        .then(like => {
+                                            console.log("added like!");
+                                            return res.status(200).json(like);
+                                        })
+                                        .catch(error =>{
+                                            res.statusMessage(500) = "Something went wrong with the DB";
+                                            return res.status(500).json({
+                                                code: 500,
+                                                message: "Something went wrong with the DB"
+                                            }) 
+                                        });
+                        }
+                        //TODO decirle al usuario que ya dio like
+                    })
+                    .catch(error =>{
+                        console.log("no found likes?")
+                        res.statusMessage(500) = "Something went wrong with the DB";
+                        return res.status(500).json({
+                            code: 500,
+                            message: "Something went wrong with the DB"
+                        }) 
+                    });
+    
+});
+
 app.post("/accounts", jsonParser, (req, res) => {
 
     let json = req.body;

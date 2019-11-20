@@ -7,7 +7,7 @@ let accountSchema = mongoose.Schema({
     password : { type : String },
     city : { type : String },
     type : { type : String },
-    votes : {type : Number}
+    votes : [{type : String}]
 });
 
 let postSchema = mongoose.Schema({
@@ -60,6 +60,26 @@ let AccountList = {
                         })
                         .catch(error =>{
                             throw Error(error);
+                        });
+    },
+
+    verifyLike: function(band){
+        return Account.find({username:band})
+                        .then(result=>{
+                            return result;
+                        })
+                        .catch(error =>{
+                            return Error(error);
+                        });
+    },
+
+    addLike: function(band,user){
+        return Account.findOneAndUpdate({username:band},{$push: {votes: {user}}})
+                        .then(result =>{
+                            return result;
+                        })
+                        .catch(error =>{
+                            return Error(error);
                         });
     }
 };
