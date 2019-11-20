@@ -42,10 +42,11 @@ function validateInputs(){
 function verifyIfAccountExists(){
 
     let value = $("#sign_up_User").val();
+    var exists = false
     let json = {
             username: value
         }
-    console.log(json)
+    
 
     $.ajax({
         url: "/account",
@@ -54,10 +55,17 @@ function verifyIfAccountExists(){
         contentType: "application/json",
         data: JSON.stringify(json),
         success: (result) =>{
-            console.log(result)
+            if(result.length != 0){
+                exists = true;
+                let username = $("#sign_up_User").val();
+                let aux = $(".alertSpot")[0];
+                $(aux).addClass("alerts");
+                $(aux).text("Username already exists");
+            }
         }
     });
 
+    return exists;
 }
 
 registerBtn.on("click", event =>{
@@ -66,11 +74,8 @@ registerBtn.on("click", event =>{
     let isValid = validateInputs();
 
     if (isValid){
-        verifyIfAccountExists();
+        isValid = verifyIfAccountExists();
     }
-    
-
-    //TODO: verify account doesnt already exists
 
     if(isValid){
 
