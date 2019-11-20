@@ -28,7 +28,7 @@ app.get("/accounts", (req, res) =>{
                 });
 });
 
-app.get("/account", jsonParser, (req, res) =>{
+app.post("/account", jsonParser, (req, res) =>{
     let query = req.body
     console.log(query)
 
