@@ -54,13 +54,13 @@ function verifyIfAccountExists(){
             if(result.length != 0){
                 exists = true;
                 let aux = $(".alertSpot")[1];
-                $(aux).addClass("alerts");
-                $(aux).text("Username and password don't match any existing account");
+                $(aux).removeClass("alerts");
+                $(aux).text("");
             }
             else{
                 let aux = $(".alertSpot")[1];
-                $(aux).removeClass("alerts");
-                $(aux).text("");
+                $(aux).addClass("alerts");
+                $(aux).text("Username and password don't match any existing account");
             }
         }
     });
@@ -74,9 +74,9 @@ loginBtn.on("click", event =>{
     var isValid = validateInputs();
     console.log(isValid)
     if(isValid){
-        isValid = verifyIfAccountExists();
-    }
-    if(isValid){
-        console.log("Successful login")
-    }
+        if(verifyIfAccountExists()){
+            console.log("Successful login")
+        }
+    
+        
 });

@@ -98,36 +98,34 @@ registerBtn.on("click", event =>{
     let isValid = validateInputs();
 
     if (isValid){
-        isValid = verifyIfAccountExists();
-    }
+        if(verifyIfAccountExists()){
 
-    if(isValid){
+            let newAccount = {
+                username: $("#sign_up_User").val(),
+                password: $("#password_User").val(),
+                city: $("#user_City").val(),
+            }
 
-        let newAccount = {
-            username: $("#sign_up_User").val(),
-            password: $("#password_User").val(),
-            city: $("#user_City").val(),
+            let type = $("input[name=type]");
+            if (type[0].checked){
+                newAccount["type"] = "User";
+            }
+            else{
+                newAccount["type"] = "Artist";
+            }
+
+            // $.ajax({
+            //     url: "/accounts",
+            //     method: "POST",
+            //     dataType: "JSON",
+            //     contentType: "application/json",
+            //     data: JSON.stringify(newAccount),
+            //     success: (result) =>{
+            //         console.log(result)
+            //     }
+            // });
+
         }
-
-        let type = $("input[name=type]");
-        if (type[0].checked){
-            newAccount["type"] = "User";
-        }
-        else{
-            newAccount["type"] = "Artist";
-        }
-
-        // $.ajax({
-        //     url: "/accounts",
-        //     method: "POST",
-        //     dataType: "JSON",
-        //     contentType: "application/json",
-        //     data: JSON.stringify(newAccount),
-        //     success: (result) =>{
-        //         console.log(result)
-        //     }
-        // });
-
     }
     $.ajax({
         url: "/accounts",
