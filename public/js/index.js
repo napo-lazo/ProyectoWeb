@@ -77,6 +77,6 @@ loginBtn.on("click", event =>{
         if(verifyIfAccountExists()){
             console.log("Successful login")
         }
-    
+    }
         
 });
