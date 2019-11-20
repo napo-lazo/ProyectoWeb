@@ -36,12 +36,10 @@ function verifyIfAccountExists(){
 
     let userValue = $("#login_User").val();
     let passwordValue = $("#password_login").val();
-    var exists = false
     let json = {
             username: userValue,
             password: passwordValue
         }
-    console.log(json)
 
     $.ajax({
         url: "/account",
@@ -50,12 +48,11 @@ function verifyIfAccountExists(){
         contentType: "application/json",
         data: JSON.stringify(json),
         success: (result) =>{
-            console.log(result)
             if(result.length != 0){
-                exists = true;
                 let aux = $(".alertSpot")[1];
                 $(aux).removeClass("alerts");
                 $(aux).text("");
+                console.log("Successful login")
             }
             else{
                 let aux = $(".alertSpot")[1];
@@ -64,19 +61,13 @@ function verifyIfAccountExists(){
             }
         }
     });
-
-    return exists;
 }
 
 loginBtn.on("click", event =>{
     event.preventDefault();
     
     var isValid = validateInputs();
-    console.log(isValid)
     if(isValid){
-        if(verifyIfAccountExists()){
-            console.log("Successful login")
-        }
-    }
-        
+        verifyIfAccountExists()
+    }      
 });

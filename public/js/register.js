@@ -59,10 +59,36 @@ function validateInputs(){
     return isValid;
 }
 
+function createAccount(){
+    let newAccount = {
+        username: $("#sign_up_User").val(),
+        password: $("#password_User").val(),
+        city: $("#user_City").val(),
+    }
+
+    let type = $("input[name=type]");
+    if (type[0].checked){
+        newAccount["type"] = "User";
+    }
+    else{
+        newAccount["type"] = "Artist";
+    }
+
+    // $.ajax({
+    //     url: "/accounts",
+    //     method: "POST",
+    //     dataType: "JSON",
+    //     contentType: "application/json",
+    //     data: JSON.stringify(newAccount),
+    //     success: (result) =>{
+    //         console.log(result)
+    //     }
+    // });
+}
+
 function verifyIfAccountExists(){
 
     let value = $("#sign_up_User").val();
-    var exists = false
     let json = {
             username: value
         }
@@ -76,7 +102,6 @@ function verifyIfAccountExists(){
         data: JSON.stringify(json),
         success: (result) =>{
             if(result.length != 0){
-                exists = true;
                 let aux = $(".alertSpot")[0];
                 $(aux).addClass("alerts");
                 $(aux).text("Username already exists");
@@ -85,11 +110,10 @@ function verifyIfAccountExists(){
                 let aux = $(".alertSpot")[0];
                 $(aux).removeClass("alerts");
                 $(aux).text("");
+                createAccount();
             }
         }
     });
-
-    return exists;
 }
 
 registerBtn.on("click", event =>{
@@ -98,35 +122,9 @@ registerBtn.on("click", event =>{
     let isValid = validateInputs();
 
     if (isValid){
-        if(verifyIfAccountExists()){
-
-            let newAccount = {
-                username: $("#sign_up_User").val(),
-                password: $("#password_User").val(),
-                city: $("#user_City").val(),
-            }
-
-            let type = $("input[name=type]");
-            if (type[0].checked){
-                newAccount["type"] = "User";
-            }
-            else{
-                newAccount["type"] = "Artist";
-            }
-
-            // $.ajax({
-            //     url: "/accounts",
-            //     method: "POST",
-            //     dataType: "JSON",
-            //     contentType: "application/json",
-            //     data: JSON.stringify(newAccount),
-            //     success: (result) =>{
-            //         console.log(result)
-            //     }
-            // });
-
-        }
+        verifyIfAccountExists()
     }
+
     $.ajax({
         url: "/accounts",
         method: "GET",
