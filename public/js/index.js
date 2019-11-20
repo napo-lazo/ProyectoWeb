@@ -50,6 +50,7 @@ function verifyIfAccountExists(){
         contentType: "application/json",
         data: JSON.stringify(json),
         success: (result) =>{
+            console.log(result)
             if(result.length != 0){
                 exists = true;
                 let aux = $(".alertSpot")[1];
