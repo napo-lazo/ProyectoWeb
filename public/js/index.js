@@ -14,12 +14,22 @@ function validateInputs(){
         $(aux).text("No username given");
         isValid = false;
     }
+    else{
+        let aux = $(".alertSpot")[0];
+        $(aux).removeClass("alerts");
+        $(aux).text("");
+    }
 
     if(password.trim().length == 0){
         let aux = $(".alertSpot")[1];
         $(aux).addClass("alerts");
         $(aux).text("No password given");
         isValid = false;
+    }
+    else{
+        let aux = $(".alertSpot")[1];
+        $(aux).removeClass("alerts");
+        $(aux).text("");
     }
     
     if(city == null){
@@ -28,12 +38,22 @@ function validateInputs(){
         $(aux).text("No city selected");
         isValid = false;
     }
+    else{
+        let aux = $(".alertSpot")[2];
+        $(aux).removeClass("alerts");
+        $(aux).text("");
+    }
 
     if(type.length == 0){
         let aux = $(".alertSpot")[3];
         $(aux).addClass("alerts");
         $(aux).text("No type selected");
         isValid = false;
+    }
+    else{
+        let aux = $(".alertSpot")[3];
+        $(aux).removeClass("alerts");
+        $(aux).text("");
     }
 
     return isValid;
@@ -57,10 +77,14 @@ function verifyIfAccountExists(){
         success: (result) =>{
             if(result.length != 0){
                 exists = true;
-                let username = $("#sign_up_User").val();
                 let aux = $(".alertSpot")[0];
                 $(aux).addClass("alerts");
                 $(aux).text("Username already exists");
+            }
+            else{
+                let aux = $(".alertSpot")[0];
+                $(aux).removeClass("alerts");
+                $(aux).text("");
             }
         }
     });
