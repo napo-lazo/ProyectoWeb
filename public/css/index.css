@@ -42,7 +42,7 @@ h2 {
     align-items: center;
 }
 
-.fields, select, #registerAccount{
+.fields, select, #registerAccount, #userLogin{
     margin-bottom: 10px;
     padding: 3%;
     width: 80%;

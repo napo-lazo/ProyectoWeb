@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Local Artists</title>
+</head>
+<body>
+    <fieldset class="login">
+        <div id="mainForm">
+            <h2>Create Account</h2>
+            <input type="text" id="sign_up_User" class="fields" placeholder="Username">
+            <span class="alertSpot"></span>
+            <input type="password" id="password_User" class="fields" placeholder="Password">
+            <span class="alertSpot"></span>
+            <select id="user_City">
+                <option value="" disabled selected>Select your city</option>
+                <option value="Monterrey">Monterrey</option>
+                <option value="Cdmx">Ciudad de Mexico</option>
+            </select>
+            <span class="alertSpot"></span>
+            <span id="radio">
+                <input type="radio" name="type" id="user">
+                <label for="user">User</label>
+                <input type="radio" name="type" id="artist">
+                <label for="artist">Artist</label>
+            </span>
+            <span class="alertSpot"></span>
+            <input type="button" class="btn btn-primary" value="Register" id="registerAccount">
+            <p>Already have an account? <a href="index.html">Log in</a> </p>
+        </div>
+    </fieldset>
+    <script 
+        src="https://code.jquery.com/jquery-3.4.1.js" 
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous">
+    </script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
