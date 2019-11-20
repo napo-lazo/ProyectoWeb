@@ -2,7 +2,7 @@ let express = require("express");
 let morgan = require("morgan");
 let bodyParser = require("body-parser");
 let mongoose = require("mongoose");
-let {AccountList} = require("./model");
+let {AccountList, PostList} = require("./model");
 let {DATABASE_URL, PORT} = require("./config");
 
 let app = express();
@@ -14,6 +14,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 
+//for debugging
 app.get("/accounts", (req, res) =>{
     AccountList.getAll()
                 .then(accounts =>{
@@ -49,12 +50,7 @@ app.post("/account", jsonParser, (req, res) =>{
 
 app.post("/accounts", jsonParser, (req, res) => {
 
-    let json = {
-        username: req.body.username,
-        password: req.body.password,
-        city: req.body.city,
-        type: req.body.type,
-    };
+    let json = req.body;
 
     AccountList.post(json)
                     .then(post =>{
@@ -67,6 +63,39 @@ app.post("/accounts", jsonParser, (req, res) => {
                             message: "Something went wrong with the DB"
                         })
                     });
+});
+
+//for debugging
+app.get("/posts", (req, res) =>{
+    PostList.getAll()
+                .then(posts =>{
+                    return res.status(200).json(posts);
+                })
+                .catch(error =>{
+                    res.statusMessage = "Something went wrong with the DB";
+                    return res.status(500).json({
+                        code: 500,
+                        message: "Something went wrong with the DB"
+                    })
+                });
+});
+
+app.post("/post", jsonParser, (req, res) =>{
+
+    let json = req.body;
+
+    PostList.post(json)
+                .then(post =>{
+                    return res.status(201).json(post);
+                })
+                .catch(err =>{
+                    res.statusMessage = "Something went wrong with the DB";
+                    return res.status(500).json({
+                        code: 500,
+                        message: "Something went wrong with the DB"
+                    })
+                });
+
 });
 
 let server;
