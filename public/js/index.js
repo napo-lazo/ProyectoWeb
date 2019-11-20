@@ -41,7 +41,7 @@ function verifyIfAccountExists(){
             username: userValue,
             password: passwordValue
         }
-    
+    console.log(json)
 
     $.ajax({
         url: "/account",
@@ -72,7 +72,11 @@ loginBtn.on("click", event =>{
     event.preventDefault();
     
     var isValid = validateInputs();
+    console.log(isValid)
     if(isValid){
-        isValid = verifyIfAccountExists
+        isValid = verifyIfAccountExists;
+    }
+    if(isValid){
+        console.log("Successful login")
     }
 });
