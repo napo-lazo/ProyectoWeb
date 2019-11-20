@@ -49,7 +49,7 @@ function verifyIfAccountExists(){
 
     $.ajax({
         url: "/account",
-        method: "POST",
+        method: "GET",
         dataType: "JSON",
         contentType: "application/json",
         data: JSON.stringify(json),
