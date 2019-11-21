@@ -74,6 +74,7 @@ let AccountList = {
     },
 
     addLike: function(band,user){
+
         return Account.findOneAndUpdate({username:band},{$push: {votes: user}},{new: true})
                         .then(result =>{
                             return result;
@@ -81,6 +82,17 @@ let AccountList = {
                         .catch(error =>{
                             return Error(error);
                         });
+                        
+    },
+
+    removeLike: function(band,user){
+        return Account.findOneAndUpdate({username:band},{$pull: {votes: user}})
+                        .then(result =>{
+                            return result;
+                        })
+                        .catch(error =>{
+                            return Error(error);
+                        })
     }
 };
 

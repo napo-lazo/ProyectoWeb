@@ -74,3 +74,18 @@ h2 {
 ul {
     list-style-type: none;
   }
+
+.delete{
+    color: white;
+    background-color: red;
+}
+
+.vote{
+    color:white;
+    background-color: #00FF00;
+}
+
+.login{
+    background-color:orangered;
+    color:white;
+}
