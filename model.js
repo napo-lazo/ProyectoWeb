@@ -14,7 +14,8 @@ let postSchema = mongoose.Schema({
     title : {type : String},
     description : {type : String},
     dateOfPublication : {type : String},
-    publishedBy : {type: String}
+    publishedBy : {type: String},
+    time : {type:Date,default: Date.now}
 });
 
 let Account = mongoose.model("Account", accountSchema);
@@ -105,6 +106,16 @@ let AccountList = {
                         })
     },
 
+    getLikes: function(user){
+        return Account.findOne({username:user},{votes:1,_id:0})
+                        .then(result =>{
+                            return result;
+                        })
+                        .catch(error =>{
+                            return Error(error);
+                        })
+    },
+
     getCityOfUser(user){
         return Account.findOne({username:user},{city:1, _id:0})
                         .then(result =>{
@@ -152,6 +163,16 @@ PostList = {
                         .then(post =>{
                             console.log(post);
                             return post;
+                        })
+                        .catch(error =>{
+                            throw Error(error);
+                        });
+    },
+
+    getPostsLiked: function(artistArray){
+        return Post.find({publishedBy:{$in:artistArray}})
+                        .then(posts =>{
+                            return posts;
                         })
                         .catch(error =>{
                             throw Error(error);
