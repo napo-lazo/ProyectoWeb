@@ -14,7 +14,8 @@ let postSchema = mongoose.Schema({
     title : {type : String},
     description : {type : String},
     dateOfPublication : {type : String},
-    publishedBy : {type: String}
+    publishedBy : {type: String},
+    time : {type:Date,default: Date.now}
 });
 
 let Account = mongoose.model("Account", accountSchema);

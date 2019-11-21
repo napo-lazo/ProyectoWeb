@@ -1,5 +1,15 @@
 let base = $("#ul-list");
 
+function sortByProperty(property){  
+    return function(a,b){
+       if(a[property] < b[property])  
+          return 1;
+       else if(a[property] > b[property])  
+          return -1;
+       return 0;  
+    }
+}
+
 //TODO: DECIRLE AL USUARIO SI NO ESTA LOGED IN QUE NO PUEDE VER ESTA PAGINA
 function init(){
     base.html("");
@@ -16,6 +26,7 @@ function init(){
         data: JSON.stringify(nameJson),
         success: (result) =>{
             console.log(result);
+            result.sort(sortByProperty("time"));
             result.forEach(e => {
                 base.append("<li><div class='posts'><div class='flex'><p>Time: "+e['dateOfPublication']+"</p><p>Artist: "+e['publishedBy']+"</p></div><p class='title'>Title: "+e['title']+"</p><p>Description: "+e['description']+"</p></div></li>");
             });
