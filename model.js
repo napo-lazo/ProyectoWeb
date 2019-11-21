@@ -158,8 +158,7 @@ PostList = {
                         });
     },
 
-    getArtistPosts: function(artistArray){
-        
+    getPostsLiked: function(artistArray){
         return Post.find({publishedBy:{$in:artistArray}})
                         .then(posts =>{
                             return posts;

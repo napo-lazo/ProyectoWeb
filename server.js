@@ -250,7 +250,7 @@ app.post("/get-posts-favorite",(req,res)=>{
                 .then(likes=>{
                     arr = likes['votes'];
                     console.log(arr);
-                    PostList.getArtistPosts(arr)
+                    PostList.getPostsLiked(arr)
                                 .then(posts=>{
                                     return res.status(200).json(posts);
                                 })
