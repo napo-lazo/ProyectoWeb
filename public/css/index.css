@@ -108,11 +108,11 @@ input {
   padding: 10px;
   font-size: 16px;
 }
-input[type=text] {
+.search {
   background-color: #f1f1f1;
   width: 100%;
 }
-input[type=submit] {
+.searchBtn {
   background-color: DodgerBlue;
   color: #fff;
 }
