@@ -50,6 +50,7 @@ if(Cookies.get("type") == "User"){
 else{
     $(title).text("Your posts");
     $(btnSpace).prepend('<input class="btn btn-primary" type="button" value="Create post"></input>');
+    initArtist();
 }
 
 
