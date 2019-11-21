@@ -43,6 +43,16 @@ let AccountList = {
                         });
     },
 
+    getArtistsByCity: function(city){
+        return Account.find({type:"Artist",city:city})
+                        .then(artists =>{
+                            return artists;
+                        })
+                        .catch(error =>{
+                            throw Error(error)
+                        });
+    },
+
     verifyUserName: function(user){
         return Account.find(user)
                         .then(result =>{
@@ -87,6 +97,16 @@ let AccountList = {
 
     removeLike: function(band,user){
         return Account.findOneAndUpdate({username:band},{$pull: {votes: user}})
+                        .then(result =>{
+                            return result;
+                        })
+                        .catch(error =>{
+                            return Error(error);
+                        })
+    },
+
+    getCityOfUser(user){
+        return Account.findOne({username:user},{city:1, _id:0})
                         .then(result =>{
                             return result;
                         })

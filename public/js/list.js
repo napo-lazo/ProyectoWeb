@@ -1,6 +1,7 @@
 let city = "Monterrey";
 let base = $("#ul-list");
 let vote = $(".voteup");
+let cityText = $("#city");
 
 function sortByProperty(property){  
     return function(a,b){  
@@ -14,14 +15,35 @@ function sortByProperty(property){
  }
 
 function init(){
-    //primero es aggarrar a todas las bandas
-
     userName = Cookies.get("connectedUser");
+    let serarch = "";
+    let nameJson = {
+        username: userName
+    }
+    if(typeof userName == "undefined"){
+        search = "/artist-Accounts"
+        cityText.html("<h1 class=cityText>You are looking at artist from</h1><h1>Everywhere</h1>");
+    }else{
+        $.ajax({
+            url: "/get-city",
+            method: "POST",
+            dataType: "JSON",
+            contentType: "application/json",
+            data: JSON.stringify(nameJson),
+            success: (result) =>{
+                cityText.html("<h1 class='cityText'>You are looking at artists from:</h1><h1>"+result['city']+"</h1>");
+            }
+        })
+        search = "/artist-city";
+    }
     console.log(userName);
     base.html("");
     $.ajax({
-        url: "/artist-Accounts",
+        url: search,
         method: "POST",
+        dataType: "JSON",
+        contentType: "application/json",
+        data: JSON.stringify(nameJson),
         success: (result) =>{
             result.sort(sortByProperty("votes"));
             result.forEach(e =>{
