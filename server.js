@@ -78,8 +78,7 @@ app.post("/likes",jsonParser,(req,res)=>{
                             }
                         })
                         if(!found){
-                            console.log("new like by: "+user);
-                            console.log("band: "+band);
+                            console.log(user+" liked "+band);
                             AccountList.addLike(band,user)
                                         .then(like => {
                                             console.log(like);
@@ -95,8 +94,17 @@ app.post("/likes",jsonParser,(req,res)=>{
                                         });
                         }else{
                             console.log("ya existia el like");
-
-                            //TODO decirle al usuario que ya dio like
+                            AccountList.removeLike(band,user)
+                                        .then(like=>{
+                                            return res.status(200).json(like);
+                                        })
+                                        .catch(error =>{
+                                            res.statusMessage(500) = "Something went wrong with the DB";
+                                            return res.status(500).json({
+                                                code: 500,
+                                                message: "Something went wrong with the DB"
+                                            })  
+                                        });
                         }
                     })
                     .catch(error =>{
