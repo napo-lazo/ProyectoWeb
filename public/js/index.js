@@ -52,6 +52,7 @@ function verifyIfAccountExists(){
                 let aux = $(".alertSpot")[1];
                 $(aux).removeClass("alerts");
                 $(aux).text("");
+                Cookies.set("connectedUser", result[0]["username"]);
                 window.location.replace("/list.html");
             }
             else{
@@ -68,5 +69,5 @@ loginBtn.on("click", event =>{
     var isValid = validateInputs();
     if(isValid){
         verifyIfAccountExists()
-    }      
+    }
 });
