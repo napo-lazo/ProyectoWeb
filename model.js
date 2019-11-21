@@ -18,7 +18,7 @@ let postSchema = mongoose.Schema({
 });
 
 let Account = mongoose.model("Account", accountSchema);
-let Post = mongoose.model("Post", postSchema);
+let Post = mongoose.model("Artist-Post", postSchema);
 
 let AccountList = {
 
