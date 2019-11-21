@@ -44,6 +44,52 @@ app.post("/artist-Accounts", (req, res) => {
                 }); 
 });
 
+app.post("/get-city",(req,res) =>{
+    let query = req.body;
+    AccountList.getCityOfUser(query['username'])
+                .then(city =>{
+                    console.log(city);
+                    return res.status(200).json(city);
+                })
+                .catch(error =>{
+                    res.statusMessage = "Something went wrong with the DB";
+                    return res.status(500).json({
+                        code: 500,
+                        message: "Something went wrong with the DB"
+                    })
+                }); 
+})
+
+app.post("/artist-city", (req, res) => {
+
+    let query = req.body;
+    //recibe el usuario y busca su ciudad
+    AccountList.getCityOfUser(query['username'])
+                .then(city =>{
+                    console.log(city);
+                    AccountList.getArtistsByCity(city['city'])
+                                .then(artists =>{
+                                    return res.status(200).json(artists);
+                                })
+                                .catch(error =>{
+                                    res.statusMessage = "Something went wrong with the DB";
+                                    return res.status(500).json({
+                                        code: 500,
+                                        message: "Something went wrong with the DB"
+                                    })
+                                }); 
+                })
+                .catch(error =>{
+                    res.statusMessage = "Something went wrong with the DB";
+                    return res.status(500).json({
+                        code: 500,
+                        message: "Something went wrong with the DB"
+                    })
+                }); 
+
+    
+});
+
 app.post("/account", jsonParser, (req, res) =>{
     let query = req.body
     console.log(query)

@@ -89,3 +89,9 @@ ul {
     background-color:orangered;
     color:white;
 }
+
+.cityText{
+    text-align: center;
+}
+
+h1 { color: black; font-family: 'Raleway',sans-serif; font-size: 40px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase; }
