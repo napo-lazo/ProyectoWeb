@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/index.css">
-    <title>Music rank</title>
+    <title>Local Artists</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -18,24 +16,29 @@
             <div class="navbar-nav">
             <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="#">Browse</a>
-            <a class="nav-item nav-link " id="postSpot" href="/postCreation.html">Create post</a> <!-- Spot for post creation for artists -->
+            <a class="nav-item nav-link" id="postSpot" href="#">Create post</a> <!-- Spot for post creation for artists -->
             <a class="nav-item nav-link" href="#">About us</a>
             <a class="nav-item nav-link">Log out</a>
             </div>
         </div>
     </nav>
-    <div id="list">
-        <ul id="ul-list">
-            
-        </ul>
-    </div>
-
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.js"
+    <fieldset class="login">
+        <div id="mainForm">
+            <h2>Log in</h2>
+            <input type="text" id="titlePost" class="fields" placeholder="Post title">
+            <span class="alertSpot"></span>
+            <textarea id="descPost" placeholder="Post description" class="fBtn"></textarea>
+            <span class="alertSpot"></span>
+            <input type="button" class="btn btn-primary fBtn" value="Create post" id="createPost">
+            <p>Don't have an account? <a href="register.html">Create account</a></p>
+        </div>
+    </fieldset>
+    <script 
+        src="https://code.jquery.com/jquery-3.4.1.js" 
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
-    <script src="./js/list.js"></script>
+    <script src="./js/postCreation.js"></script>
 </body>
 </html>
