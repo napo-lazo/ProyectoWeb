@@ -113,6 +113,15 @@ let AccountList = {
                         .catch(error =>{
                             return Error(error);
                         })
+    },
+    getCities(){
+        return Account.find({},{city:1,_id:0})
+                        .then(result =>{
+                            return result;
+                        })
+                        .catch(error =>{
+                            return Error(error);
+                        })
     }
 };
 

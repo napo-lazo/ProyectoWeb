@@ -60,6 +60,20 @@ app.post("/get-city",(req,res) =>{
                 }); 
 })
 
+app.post("/get-all-cities",(req,res) =>{
+    AccountList.getCities()
+                .then(cities =>{
+                    return res.status(200).json(city);
+                })
+                .catch(error =>{
+                    res.statusMessage = "Something went wrong with the DB";
+                    return res.status(500).json({
+                        code: 500,
+                        message: "Something went wrong with the DB"
+                    })
+                });
+});
+
 app.post("/artist-city", (req, res) => {
 
     let query = req.body;
