@@ -52,7 +52,7 @@ function verifyIfAccountExists(){
                 let aux = $(".alertSpot")[1];
                 $(aux).removeClass("alerts");
                 $(aux).text("");
-                console.log("Successful login")
+                window.location.replace("/list.html");
             }
             else{
                 let aux = $(".alertSpot")[1];
