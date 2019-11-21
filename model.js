@@ -146,7 +146,7 @@ PostList = {
                         .catch(error =>{
                             throw Error(error);
                         });
-    }
+    },
 };
 
 module.exports = {AccountList, PostList};

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User-feed</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="#">Music Rank</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="/list.html">Home</a>
+                    <a class="nav-item nav-link" href="#">Browse</a>
+                    <a class="nav-item nav-link " id="postSpot" href="/postCreation.html">Create post</a> <!-- Spot for post creation for artists -->
+                    <a class="nav-item nav-link" href="/aboutUs.html">About us</a>
+                    <a class="nav-item nav-link active" href="#">User-feed<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="/index.html">Log out</a>
+                    </div>
+                </div>
+            </nav>
+
+    <h1>Posts from your favorite bands</h1>
+    <div id="user-feed-posts">
+            <ul id="ul-list">
+                <li>test</li>
+            </ul>
+    </div>
+
+
+
+
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+    <script src="./js/user-feed.js"></script>
+</body>
+</html>

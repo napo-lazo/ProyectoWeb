@@ -176,3 +176,25 @@ input {
 .about-text{
   width: 70%;
 }
+
+.posts{
+  border:2px solid black;
+  margin: 5px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.title{
+  font-size: larger;
+}
+
+.flex{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin:15px;
+}
+
+.posts > p{
+  margin:15px;
+}
