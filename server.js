@@ -248,8 +248,8 @@ app.post("/artist-Posts", jsonParser, (req, res) =>{
     let json = req.body;
 
     PostList.getByArtist(json)
-                .then(post =>{
-                    return res.status(201).json(post);
+                .then(posts =>{
+                    return res.status(200).json(posts);
                 })
                 .catch(err =>{
                     res.statusMessage = "Something went wrong with the DB";

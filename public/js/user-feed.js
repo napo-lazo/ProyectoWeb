@@ -24,7 +24,7 @@ function initArtist(){
     let json = {
         publishedBy: Cookies.get("username")
     }
-
+    console.log(json)
     $.ajax({
         url: "/artist-Posts",
         method: "POST",
