@@ -52,7 +52,8 @@ function verifyIfAccountExists(){
                 let aux = $(".alertSpot")[1];
                 $(aux).removeClass("alerts");
                 $(aux).text("");
-                Cookies.set("connectedUser", result[0]["username"]);
+                Cookies.set("username", result[0]["username"]);
+                Cookies.set("type", result[0]["type"]);
                 window.location.replace("/list.html");
             }
             else{

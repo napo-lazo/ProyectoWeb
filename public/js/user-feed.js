@@ -1,6 +1,8 @@
 let base = $("#ul-list");
+let title = $('h1')[0];
+let btnSpace = $('#user-feed-posts');
 
-function init(){
+function initUser(){
     base.html("");
 
     $.ajax({
@@ -16,5 +18,17 @@ function init(){
     })
 }
 
+btnSpace.on("click", ".btn", event =>{
+    window.location.href = "/postCreation.html";
+});
 
-init();
+if(Cookies.get("type") == "User"){
+    $(title).text("Posts from your favorite bands");
+    initUser();
+}
+else{
+    $(title).text("Your posts");
+    $(btnSpace).prepend('<input class="btn btn-primary" type="button" value="Create post"></input>');
+}
+
+
