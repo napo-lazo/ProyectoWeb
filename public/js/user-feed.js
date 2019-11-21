@@ -29,6 +29,7 @@ function initArtist(){
         url: "/artist-Posts",
         method: "POST",
         dataType:"JSON",
+        contentType: "application/json",
         data: JSON.stringify(json),
         success: (result) =>{
             console.log(result);
