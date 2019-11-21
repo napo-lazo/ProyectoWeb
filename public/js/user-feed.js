@@ -24,25 +24,12 @@ function initArtist(){
     let json = {
         publishedBy : Cookies.get("username")
     }
-    console.log(json)
     $.ajax({
         url: "/artist-Posts",
         method: "POST",
         dataType:"JSON",
         contentType: "application/json",
         data: JSON.stringify(json),
-        success: (result) =>{
-            console.log(result);
-            result.forEach(e => {
-                base.append("<li><div class='posts'><div class='flex'><p>Time: "+e['dateOfPublication']+"</p><p>Artist: "+e['publishedBy']+"</p></div><p class='title'>Title: "+e['title']+"</p><p>Description: "+e['description']+"</p></div></li>");
-            });
-        }
-    })
-
-    $.ajax({
-        url: "/posts",
-        method: "GET",
-        dataType:"JSON",
         success: (result) =>{
             console.log(result);
             result.forEach(e => {

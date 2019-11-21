@@ -40,7 +40,7 @@ function publishPost(){
         title: $("#titlePost").val(),
         description: $("#descPost").val(),
         dateOfPublication : date.getDate() + "/" +  date.getMonth() + "/" + date.getFullYear(),
-        publishedBy : Cookies.get("connectedUser")
+        publishedBy : Cookies.get("username")
     }
 
     $.ajax({
