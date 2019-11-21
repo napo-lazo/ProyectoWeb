@@ -147,3 +147,32 @@ input {
   text-align: center;
   margin-bottom: 15px;
 }
+
+#integrantes{
+  display: flex;
+  justify-content: space-around;
+
+}
+
+#napo{
+  width: 50%;
+  margin-left: 30px;
+}
+
+#pepe{
+  width: 50%;
+}
+
+
+.pp{
+  width: 350px;
+  height: auto;
+}
+
+.github{
+  font-size: larger;
+}
+
+.about-text{
+  width: 70%;
+}
