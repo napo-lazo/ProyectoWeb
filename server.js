@@ -60,6 +60,26 @@ app.post("/get-city",(req,res) =>{
                 }); 
 })
 
+app.post("/get-all-cities",(req,res) =>{
+    AccountList.getCities()
+                .then(cities =>{
+                    let arr = [];
+                    cities.forEach(e=>{
+                        if(!arr.includes(e['city'])){
+                            arr.push(e['city']);
+                        }
+                    })
+                    return res.status(200).json(arr);
+                })
+                .catch(error =>{
+                    res.statusMessage = "Something went wrong with the DB";
+                    return res.status(500).json({
+                        code: 500,
+                        message: "Something went wrong with the DB"
+                    })
+                });
+});
+
 app.post("/artist-city", (req, res) => {
 
     let query = req.body;
@@ -89,6 +109,21 @@ app.post("/artist-city", (req, res) => {
 
     
 });
+
+app.post("/artists-from-city",(req,res)=>{
+    let query = req.body;
+    AccountList.getArtistsByCity(query['city'])
+                                .then(artists =>{
+                                    return res.status(200).json(artists);
+                                })
+                                .catch(error =>{
+                                    res.statusMessage = "Something went wrong with the DB";
+                                    return res.status(500).json({
+                                        code: 500,
+                                        message: "Something went wrong with the DB"
+                                    })
+                                }); 
+})
 
 app.post("/account", jsonParser, (req, res) =>{
     let query = req.body
