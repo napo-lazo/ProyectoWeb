@@ -1,12 +1,19 @@
 let base = $("#ul-list");
 
+//TODO: DECIRLE AL USUARIO SI NO ESTA LOGED IN QUE NO PUEDE VER ESTA PAGINA
 function init(){
     base.html("");
-
+    userName = Cookies.get("connectedUser");
+    console.log(userName);
+    let nameJson={
+        username:userName
+    }
     $.ajax({
-        url: "/posts",
-        method: "GET",
+        url: "/get-posts-favorite",
+        method: "POST",
         dataType:"JSON",
+        contentType: "application/json",
+        data: JSON.stringify(nameJson),
         success: (result) =>{
             console.log(result);
             result.forEach(e => {

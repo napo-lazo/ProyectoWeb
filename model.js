@@ -105,6 +105,16 @@ let AccountList = {
                         })
     },
 
+    getLikes: function(user){
+        return Account.findOne({username:user},{votes:1,_id:0})
+                        .then(result =>{
+                            return result;
+                        })
+                        .catch(error =>{
+                            return Error(error);
+                        })
+    },
+
     getCityOfUser(user){
         return Account.findOne({username:user},{city:1, _id:0})
                         .then(result =>{
@@ -142,6 +152,17 @@ PostList = {
                         .then(post =>{
                             console.log(post);
                             return post;
+                        })
+                        .catch(error =>{
+                            throw Error(error);
+                        });
+    },
+
+    getArtistPosts: function(artistArray){
+        
+        return Post.find({publishedBy:{$in:artistArray}})
+                        .then(posts =>{
+                            return posts;
                         })
                         .catch(error =>{
                             throw Error(error);
