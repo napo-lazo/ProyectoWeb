@@ -244,6 +244,23 @@ app.get("/posts", (req, res) =>{
                 });
 });
 
+app.post("/artist-Posts", jsonParser, (req, res) =>{
+    let json = req.body;
+
+    PostList.getByArtist(json)
+                .then(post =>{
+                    return res.status(201).json(post);
+                })
+                .catch(err =>{
+                    res.statusMessage = "Something went wrong with the DB";
+                    return res.status(500).json({
+                        code: 500,
+                        message: "Something went wrong with the DB"
+                    })
+                });
+
+});
+
 app.post("/post", jsonParser, (req, res) =>{
 
     let json = req.body;

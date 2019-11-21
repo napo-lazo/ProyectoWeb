@@ -137,6 +137,16 @@ PostList = {
                         });
     },
 
+    getByArtist: function(artist){
+        return Post.find(artist)
+                        .then(posts =>{
+                            return posts;
+                        })
+                        .catch(error =>{
+                            throw Error(error);
+                        });
+    },
+
     post: function(newPost){
         return Post.create(newPost)
                         .then(post =>{

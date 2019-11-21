@@ -18,6 +18,27 @@ function initUser(){
     })
 }
 
+function initArtist(){
+    base.html("");
+
+    let json = {
+        publishedBy: Cookies.get("username")
+    }
+
+    $.ajax({
+        url: "/posts",
+        method: "GET",
+        dataType:"JSON",
+        data: JSON.stringify(newPost),
+        success: (result) =>{
+            console.log(result);
+            result.forEach(e => {
+                base.append("<li><div class='posts'><div class='flex'><p>Time: "+e['dateOfPublication']+"</p><p>Artist: "+e['publishedBy']+"</p></div><p class='title'>Title: "+e['title']+"</p><p>Description: "+e['description']+"</p></div></li>");
+            });
+        }
+    })
+}
+
 btnSpace.on("click", ".btn", event =>{
     window.location.href = "/postCreation.html";
 });
