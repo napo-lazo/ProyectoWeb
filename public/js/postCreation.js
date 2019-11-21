@@ -32,7 +32,7 @@ function validateInputs(){
     return isValid;
 }
 
-function createPost(){
+function publishPost(){
 
     let date = new Date();
 
@@ -69,7 +69,7 @@ createPost.on("click", event =>{
     let isValid = validateInputs();
     
     if(isValid){
-        createPost()
+        publishPost()
     }
 
 });
