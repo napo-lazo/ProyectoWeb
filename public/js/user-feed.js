@@ -26,8 +26,8 @@ function initArtist(){
     }
 
     $.ajax({
-        url: "/posts",
-        method: "GET",
+        url: "/artist-Posts",
+        method: "POST",
         dataType:"JSON",
         data: JSON.stringify(json),
         success: (result) =>{
