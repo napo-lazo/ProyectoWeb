@@ -29,7 +29,7 @@ function initArtist(){
         url: "/posts",
         method: "GET",
         dataType:"JSON",
-        data: JSON.stringify(newPost),
+        data: JSON.stringify(json),
         success: (result) =>{
             console.log(result);
             result.forEach(e => {
