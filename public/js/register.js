@@ -81,7 +81,8 @@ function createAccount(){
         contentType: "application/json",
         data: JSON.stringify(newAccount),
         success: (result) =>{
-            console.log(result)
+            console.log(result);
+            window.location.replace("/index.html");
         }
      });
 }
