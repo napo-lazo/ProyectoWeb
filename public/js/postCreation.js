@@ -40,6 +40,7 @@ function publishPost(){
         title: $("#titlePost").val(),
         description: $("#descPost").val(),
         dateOfPublication : date.getDate() + "/" +  date.getMonth() + "/" + date.getFullYear(),
+        // TODO: get name of the current user via cookies
         publishedBy : "dummy"
     }
 
