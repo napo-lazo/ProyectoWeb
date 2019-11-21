@@ -79,8 +79,10 @@ app.post("/likes",jsonParser,(req,res)=>{
                         })
                         if(!found){
                             console.log("new like by: "+user);
-                            AccountList.addLike(user)
+                            console.log("band: "+band);
+                            AccountList.addLike(band,user)
                                         .then(like => {
+                                            console.log(like);
                                             console.log("added like!");
                                             return res.status(200).json(like);
                                         })
@@ -91,8 +93,11 @@ app.post("/likes",jsonParser,(req,res)=>{
                                                 message: "Something went wrong with the DB"
                                             }) 
                                         });
+                        }else{
+                            console.log("ya existia el like");
+
+                            //TODO decirle al usuario que ya dio like
                         }
-                        //TODO decirle al usuario que ya dio like
                     })
                     .catch(error =>{
                         console.log("no found likes?")

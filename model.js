@@ -74,7 +74,7 @@ let AccountList = {
     },
 
     addLike: function(band,user){
-        return Account.findOneAndUpdate({username:band},{$push: {votes: {user}}})
+        return Account.findOneAndUpdate({username:band},{$push: {votes: user}},{new: true})
                         .then(result =>{
                             return result;
                         })
