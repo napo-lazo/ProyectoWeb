@@ -150,6 +150,7 @@ base.on("click",".voteup",function(e){
 })
 
 function init(){
+
     base.html("");
     bands = [];
     userName = Cookies.get("username");
@@ -294,3 +295,13 @@ $.ajax({
 })
 
 init();
+
+userName = Cookies.get("connectedUser");
+
+if(Cookies.get("type") == "User"){
+    $("#navbarDropdown").text(userName);
+}else if(Cookies.get("type") == "Artist"){
+    $("#navbarDropdown").text(userName);
+}else{
+    //???
+}

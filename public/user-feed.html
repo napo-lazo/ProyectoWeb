@@ -15,16 +15,25 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="/list.html">Home</a>
-                    <a class="nav-item nav-link" href="/browse.html">Browse</a>
-                    <a class="nav-item nav-link " id="postSpot" href="/postCreation.html">Create post</a> <!-- Spot for post creation for artists -->
-                    <a class="nav-item nav-link" href="/aboutUs.html">About us</a>
-                    <a class="nav-item nav-link active" href="#">User-feed<span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="/index.html">Log out</a>
+                    <div class="nav navbar-nav mr-auto">
+                        <a class="nav-item nav-link" href="/list.html">Home</a>
+                        <a class="nav-item nav-link " href="/browse.html">Browse</a>
+                        <a class="nav-item nav-link " id="postSpot" href="/postCreation.html">Create post</a> <!-- Spot for post creation for artists -->
+                        <a class="nav-item nav-link" href="/aboutUs.html">About us</a>
+                    </div>
+                    <div class="nav navbar-nav ml-auto dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    user
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="active dropdown-item" href="#">Feed<span class="sr-only">(current)</span></a>
+                                <a class="dropdown-item" href="/index.html">Log out</a>
+                            </div>
                     </div>
                 </div>
-            </nav>
+        </nav>
+
+
 
     <h1></h1>
     <div id="user-feed-posts">

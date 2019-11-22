@@ -15,7 +15,9 @@ function sortByProperty(property){
 //TODO: DECIRLE AL USUARIO SI NO ESTA LOGED IN QUE NO PUEDE VER ESTA PAGINA
 function initUser(){
     base.html("");
+    
     userName = Cookies.get("username");
+    $("#navbarDropdown").text(userName);
     console.log(userName);
     let nameJson={
         username:userName
