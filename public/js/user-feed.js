@@ -16,7 +16,6 @@ function sortByProperty(property){
 function initUser(){
     base.html("");
     userName = Cookies.get("username");
-    console.log(userName);
     let nameJson={
         username:userName
     }
@@ -27,7 +26,6 @@ function initUser(){
         contentType: "application/json",
         data: JSON.stringify(nameJson),
         success: (result) =>{
-            console.log(result);
             result.sort(sortByProperty("time"));
             result.forEach(e => {
                 base.append("<li>" +
@@ -58,7 +56,6 @@ function initArtist(){
         contentType: "application/json",
         data: JSON.stringify(json),
         success: (result) =>{
-            console.log(result);
             result.sort(sortByProperty("time"));
             result.forEach(e => {
                 base.append("<li>" +
@@ -91,7 +88,6 @@ function initBand(bandName){
         contentType: "application/json",
         data: JSON.stringify(json),
         success: (result) =>{
-            console.log(result);
             result.sort(sortByProperty("time"));
             result.forEach(e => {
                 base.append("<li>" +
@@ -120,11 +116,9 @@ if(bandName){
     initBand(bandName)
 }
 else if(Cookies.get("type") == "User"){
-    console.log("viendo usuario");
     $(title).text("Posts from your favorite bands");
     initUser();
 }else if(Cookies.get("type") == "Artist"){
-    console.log("viendo artista");
     $(title).text("Your posts");
     $(btnSpace).prepend('<input class="btn btn-primary" type="button" value="Create post"></input>');
     initArtist();

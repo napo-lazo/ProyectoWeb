@@ -50,13 +50,11 @@ function publishPost(){
         contentType: "application/json",
         data: JSON.stringify(newPost),
         success: (result) =>{
-            console.log(result);
             $.ajax({
                 url: "/posts",
                 method: "GET",
                 success: (result) =>{
                     window.location.replace("/user-feed.html");
-                    console.log(result)
                 }
             });
         }

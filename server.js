@@ -48,7 +48,6 @@ app.post("/get-city",(req,res) =>{
     let query = req.body;
     AccountList.getCityOfUser(query['username'])
                 .then(city =>{
-                    console.log(city);
                     return res.status(200).json(city);
                 })
                 .catch(error =>{
@@ -86,7 +85,6 @@ app.post("/artist-city", (req, res) => {
     //recibe el usuario y busca su ciudad
     AccountList.getCityOfUser(query['username'])
                 .then(city =>{
-                    console.log(city);
                     AccountList.getArtistsByCity(city['city'])
                                 .then(artists =>{
                                     return res.status(200).json(artists);
@@ -127,11 +125,9 @@ app.post("/artists-from-city",(req,res)=>{
 
 app.post("/account", jsonParser, (req, res) =>{
     let query = req.body
-    console.log(query)
 
     AccountList.verifyUserName(query)
                 .then(account =>{
-                    console.log(account)
                     return res.status(200).json(account);
                 })
                 .catch(error =>{
@@ -153,17 +149,13 @@ app.post("/likes",jsonParser,(req,res)=>{
                     .then(likes =>{
                         likes = likes[0]['votes'];
                         likes.forEach(e =>{
-                            console.log(e);
                             if(user == e){
                                found=true;    
                             }
                         })
                         if(!found){
-                            console.log(user+" liked "+band);
                             AccountList.addLike(band,user)
                                         .then(like => {
-                                            console.log(like);
-                                            console.log("added like!");
                                             return res.status(200).json(like);
                                         })
                                         .catch(error =>{
@@ -175,8 +167,7 @@ app.post("/likes",jsonParser,(req,res)=>{
                                         });
                             AccountList.addLike(user,band)
                             .then(like => {
-                                console.log(like);
-                                console.log("added like!");
+
                                 //return res.status(200).json(like);
                             })
                             .catch(error =>{
@@ -187,7 +178,6 @@ app.post("/likes",jsonParser,(req,res)=>{
                                 }) 
                             });
                         }else{
-                            console.log("ya existia el like");
                             AccountList.removeLike(band,user)
                                         .then(like=>{
                                             return res.status(200).json(like);
@@ -213,7 +203,6 @@ app.post("/likes",jsonParser,(req,res)=>{
                         }
                     })
                     .catch(error =>{
-                        console.log("no found likes?")
                         res.statusMessage(500) = "Something went wrong with the DB";
                         return res.status(500).json({
                             code: 500,
@@ -276,7 +265,7 @@ app.post("/get-posts-favorite",(req,res)=>{
     AccountList.getLikes(user)
                 .then(likes=>{
                     arr = likes['votes'];
-                    console.log(arr);
+
                     PostList.getPostsLiked(arr)
                                 .then(posts=>{
                                     return res.status(200).json(posts);

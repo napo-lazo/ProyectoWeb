@@ -139,9 +139,7 @@ function init(){
             data: JSON.stringify(nameJson),
             success: (result) =>{
                 result.sort(sortByProperty("votes"));
-                console.log(result);
                 result.forEach(e =>{
-                    console.log(e);
                     bandName = e['username'];
                     found = false;
                     base.append("<li>" +
@@ -193,7 +191,6 @@ function init(){
             success: (result) =>{
                 result.sort(sortByProperty("votes"));
                 result.forEach(e =>{
-                    console.log(e);
                     bandName = e['username'];
                     found = false;
                     base.append("<li>" +
@@ -265,7 +262,6 @@ base.on("click",".voteup",function(e){
             contentType: "application/json",
             data: JSON.stringify(like),
             success: (result) =>{
-                console.log(result);
                 init();
             }
         })

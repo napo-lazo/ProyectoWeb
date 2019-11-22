@@ -162,7 +162,6 @@ PostList = {
     post: function(newPost){
         return Post.create(newPost)
                         .then(post =>{
-                            console.log(post);
                             return post;
                         })
                         .catch(error =>{

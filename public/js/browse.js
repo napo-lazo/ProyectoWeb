@@ -92,7 +92,6 @@ function autocomplete(inp, arr) {
 
 searchCity.on("click",e=>{
     ciudad = cityInput.val();
-    console.log(ciudad);
     if(ciudad.trim().length!=0){
         base.html("");
         cityText.html("<h1 class='cityText'>You are looking at artists from:</h1><h1>"+ciudad+"</h1>");
@@ -131,7 +130,6 @@ base.on("click",".voteup",function(e){
         user: userName
     }
 
-    console.log(like);
     if(typeof userName == "undefined"){
         location.href = "index.html";
     }else{
@@ -142,7 +140,6 @@ base.on("click",".voteup",function(e){
             contentType: "application/json",
             data: JSON.stringify(like),
             success: (result) =>{
-                console.log(result);
                 init();
             }
         })
@@ -248,7 +245,6 @@ function init(){
         })
     }else{
         base.html("");
-        console.log(ciudad);
         let cityJson = {
             city: ciudad
         }
