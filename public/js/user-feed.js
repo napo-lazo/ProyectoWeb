@@ -16,6 +16,7 @@ function sortByProperty(property){
 function initUser(){
     base.html("");
     userName = Cookies.get("connectedUser");
+    $("#navbarDropdown").text(userName);
     console.log(userName);
     let nameJson={
         username:userName
