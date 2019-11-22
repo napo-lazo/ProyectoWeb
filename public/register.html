@@ -21,12 +21,14 @@
             </select>
             <span class="alertSpot"></span>
             <span id="radio">
-                <input type="radio" name="type" id="user">
+                <input type="radio" name="type" onclick="javascript:hideArtist();" value="User" id="user">
                 <label for="user">User</label>
-                <input type="radio" name="type" id="artist">
+                <input type="radio" name="type" onclick="javascript:showArtist();" value="Artist" id="artist">
                 <label for="artist">Artist</label>
             </span>
             <span class="alertSpot"></span>
+            <input type="text" class="fields" placeholder="Music genre" id="artist-genre">
+            <input type="text" class="fields" placeholder="Description" id="artist-description">
             <input type="button" class="btn btn-primary" value="Register" id="registerAccount">
             <p>Already have an account? <a href="index.html">Log in</a> </p>
         </div>

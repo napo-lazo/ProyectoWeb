@@ -142,7 +142,7 @@ function init(){
                     console.log(e);
                     bandName = e['username'];
                     found = false;
-                    base.append("<li><div class='flat'><div class='hori'> <input type='button' class='voteup' id="+e['username']+" value='+1'></div><div class='hori2'><p class='listPs'><b>Band:</b>"+e['username']+"</p><p class='listPs'><b>Votos:</b>"+e['votes'].length+"</div></div></li>");
+                    base.append("<li><div class='flat'><div class='hori'> <input type='button' class='voteup' id="+e['username']+" value='+1'></div><div class='hori2'><p class='listPs'><b>Band:</b>"+e['username']+"</p><p class='listPs'><b>Votos:</b>"+e['votes'].length+"<p class='listPs'><b>Genre:</b> "+e['genre']+"<p class='listPs'><b>Description: </b>"+e['description']+"</div></div></li>");
                     e['votes'].forEach(vote =>{
                         if(vote == userName){
                             found = true;
@@ -179,7 +179,7 @@ function init(){
                     console.log(e);
                     bandName = e['username'];
                     found = false;
-                    base.append("<li><div class='flat'><div class='hori'> <input type='button' class='voteup' id="+e['username']+" value='+1'></div><div class='hori2'><p><b>Band:</b>"+e['username']+"</p><p><b>Votos:</b>"+e['votes'].length+"</div></div></li>");
+                    base.append("<li><div class='flat'><div class='hori'> <input type='button' class='voteup' id="+e['username']+" value='+1'></div><div class='hori2'><p class='listPs'><b>Band:</b>"+e['username']+"</p><p class='listPs'><b>Votos:</b>"+e['votes'].length+"<p class='listPs'><b>Genre:</b> "+e['genre']+"<p class='listPs'><b>Description: </b>"+e['description']+"</div></div></li>");
                     e['votes'].forEach(vote =>{
                         if(vote == userName){
                             found = true;

@@ -7,7 +7,9 @@ let accountSchema = mongoose.Schema({
     password : { type : String },
     city : { type : String },
     type : { type : String },
-    votes : [{type : String}]
+    votes : [{type : String}],
+    description: {type:String,default: ""},
+    genre: {type:String,default: ""}
 });
 
 let postSchema = mongoose.Schema({

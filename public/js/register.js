@@ -72,6 +72,8 @@ function createAccount(){
     }
     else{
         newAccount["type"] = "Artist";
+        newAccount['description'] = $("#artist-description").val();
+        newAccount['genre'] = $("#artist-genre").val();
     }
     newAccount["votes"] = 0;
     $.ajax({
@@ -85,6 +87,16 @@ function createAccount(){
             window.location.replace("/index.html");
         }
      });
+}
+
+function hideArtist(){
+    $("#artist-genre").hide();
+    $("#artist-description").hide();
+}
+
+function showArtist(){
+    $("#artist-genre").show();
+    $("#artist-description").show();
 }
 
 function verifyIfAccountExists(){
@@ -135,3 +147,5 @@ registerBtn.on("click", event =>{
     });
 
 });
+
+hideArtist();
