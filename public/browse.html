@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Browse</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Music Rank</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="/list.html">Home</a>
+                <a class="nav-item nav-link active" href="#">Browse<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" id="postSpot" href="/postCreation.html">Create post</a> <!-- Spot for post creation for artists -->
+                <a class="nav-item nav-link" href="/aboutUs.html">About us</a>
+                <a class="nav-item nav-link" href="/user-feed.html">User-feed</a>
+                <a class="nav-item nav-link" href="/index.html">Log out</a>
+            </div>
+        </div>
+    </nav>
+    <div id="city">
+        <h1>You are looking at artists from:</h1>
+        <h1>everywhere</h1>
+    </div>
+
+    <div id="autoSearch">
+            <form autocomplete="off" action="none">
+                <div class="autocomplete" style="width:300px;">
+                  <input class="search1" id="cityInput" type="text" name="myCity" placeholder="City">
+                </div>
+                <input class="searchBtn" type="button" id="searchCity" value="Search city">
+                <input class="searchBtm" type="button" id="clearCity" value="Remove filter"> 
+              </form>
+    </div>
+
+    <div id="autoSearch">
+            <form autocomplete="off" action="none">
+                <div class="autocomplete" style="width:300px;">
+                  <input class="search2" id="bandInput" type="text" name="bands" placeholder="Band">
+                </div>
+                <input class="searchBtn" type="button" id="searchBand" value="search band">
+                <input class="searchBtm" type="button" id="clearBand" value="Remove filter"> 
+              </form>
+    </div>
+
+    <div id="user-feed-posts">
+            <ul id="ul-list">
+                
+            </ul>
+    </div>
+
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+    <script src="./js/browse.js"></script>
+</body>
+</html>
