@@ -257,6 +257,7 @@ app.post("/artist-Posts", jsonParser, (req, res) =>{
                         code: 500,
                         message: "Something went wrong with the DB"
                     })
+                });
 });
 
 app.post("/get-posts-favorite",(req,res)=>{
