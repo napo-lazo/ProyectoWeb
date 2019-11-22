@@ -81,7 +81,12 @@ btnSpace.on("click", ".btn", event =>{
     window.location.href = "/postCreation.html";
 });
 
-if(Cookies.get("type") == "User"){
+let url = new URL(window.location.href) 
+let bandName = url.searchParams.get("band");
+if(bandName){
+    console.log(bandName)
+}
+else if(Cookies.get("type") == "User"){
     console.log("viendo usuario");
     $(title).text("Posts from your favorite bands");
     initUser();
