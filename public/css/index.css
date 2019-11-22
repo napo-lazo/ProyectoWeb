@@ -82,13 +82,18 @@ h2 {
 }
 
 .hori2{
-  margin-right: 80%;
+  margin-right: 70%;
 }
 
 .hori3{
     width: 7%;
     border-left: 1px solid black;
     text-align: center;
+}
+
+.viewArtists{
+  margin-top: 30%;
+  margin-left: 5%;
 }
 
 ul {
