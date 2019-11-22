@@ -50,6 +50,7 @@ function initArtist(){
         data: JSON.stringify(json),
         success: (result) =>{
             console.log(result);
+            result.sort(sortByProperty("time"));
             result.forEach(e => {
                 base.append("<li><div class='posts'><div class='flex'><p>Time: "+e['dateOfPublication']+"</p><p>Artist: "+e['publishedBy']+"</p></div><p class='title'>Title: "+e['title']+"</p><p>Description: "+e['description']+"</p></div></li>");
             });
@@ -63,13 +64,16 @@ btnSpace.on("click", ".btn", event =>{
 });
 
 if(Cookies.get("type") == "User"){
+    console.log("viendo usuario");
     $(title).text("Posts from your favorite bands");
     initUser();
-}
-else{
+}else if(Cookies.get("type") == "Artist"){
+    console.log("viendo artista");
     $(title).text("Your posts");
     $(btnSpace).prepend('<input class="btn btn-primary" type="button" value="Create post"></input>');
     initArtist();
+}else{
+    $(title).text("Please log in to see posts");
 }
 
 

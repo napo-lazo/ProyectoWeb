@@ -1,6 +1,5 @@
 let loginBtn = $("#userLogin");
 
-
 function validateInputs(){
     let username = $("#login_User").val();
     let password = $("#password_login").val();
@@ -64,6 +63,14 @@ function verifyIfAccountExists(){
         }
     });
 }
+
+
+$("#password_login").on('keypress',function(e){
+    if(e.which === 13){
+        loginBtn.click();
+    }
+})
+
 
 loginBtn.on("click", event =>{
     event.preventDefault();

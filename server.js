@@ -177,7 +177,7 @@ app.post("/likes",jsonParser,(req,res)=>{
                             .then(like => {
                                 console.log(like);
                                 console.log("added like!");
-                                return res.status(200).json(like);
+                                //return res.status(200).json(like);
                             })
                             .catch(error =>{
                                 res.statusMessage(500) = "Something went wrong with the DB";
@@ -199,6 +199,17 @@ app.post("/likes",jsonParser,(req,res)=>{
                                                 message: "Something went wrong with the DB"
                                             })  
                                         });
+                            AccountList.removeLike(user,band)
+                            .then(like=>{
+                                //
+                            })
+                            .catch(error =>{
+                                res.statusMessage(500) = "Something went wrong with the DB";
+                                return res.status(500).json({
+                                    code: 500,
+                                    message: "Something went wrong with the DB"
+                                })  
+                            });
                         }
                     })
                     .catch(error =>{
