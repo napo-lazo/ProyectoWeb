@@ -107,7 +107,8 @@ searchCity.on("click",e=>{
 
 
 function init(){
-    userName = Cookies.get("connectedUser");
+    userName = Cookies.get("username");
+    console.log(userName);
     let serarch = "";
     let nameJson = {
         username: userName
@@ -129,7 +130,6 @@ function init(){
             })
             search = "/artist-city";
         }
-        console.log(userName);
         base.html("");
         $.ajax({
             url: search,
@@ -165,7 +165,6 @@ function init(){
         })
     }else{
         base.html("");
-        console.log(ciudad);
         let cityJson = {
             city: ciudad
         }
@@ -208,7 +207,7 @@ base.on("click",".voteup",function(e){
     event.preventDefault();
     bandName = this.id;
     
-    userName = Cookies.get("connectedUser");
+    userName = Cookies.get("username");
 
     like = {
         band: bandName,
@@ -233,7 +232,7 @@ base.on("click",".voteup",function(e){
 
 init();
 
-userName = Cookies.get("connectedUser");
+userName = Cookies.get("username");
 
 if(Cookies.get("type") == "User"){
     $("#navbarDropdown").text(userName);

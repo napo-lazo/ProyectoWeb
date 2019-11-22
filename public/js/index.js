@@ -79,3 +79,7 @@ loginBtn.on("click", event =>{
         verifyIfAccountExists()
     }
 });
+
+Cookies.remove("username");
+Cookies.remove("type");
+Cookies.remove("connectedUser");
