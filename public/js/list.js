@@ -232,7 +232,7 @@ base.on("click", ".viewArtist", event =>{
     event.preventDefault();
     let btn = event.target
     let mainDiv = $(btn).parent().parent()
-    let band = $(mainDiv).find(".hori2").find("p")[0].text()
+    let band = $(mainDiv).find(".hori2").find("p")[0]
     console.log(band)
 
     // Cookies.set("band", $())
