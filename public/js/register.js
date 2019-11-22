@@ -61,7 +61,7 @@ function validateInputs(){
 
 function createAccount(){
     let newAccount = {
-        username: $("#sign_up_User").val(),
+        username: $("#si    n_up_User").val(),
         password: $("#password_User").val(),
         city: $("#user_City").val(),
     }
@@ -139,7 +139,7 @@ registerBtn.on("click", event =>{
     }
 
     $.ajax({
-        url: "/accounts",
+        url: "/posts",
         method: "GET",
         success: (result) =>{
             console.log(result)
