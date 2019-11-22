@@ -174,8 +174,10 @@ function init(){
                                                     "<input type='button' class='voteup' id="+e['username']+" value='+1'>" +
                                                 "</div>" +
                                                 "<div class='hori2'>" +
-                                                "<p class='listPs'><b>Band: </b>"+e['username']+"</p>" +
-                                                "<p class='listPs'><b>Votos: </b>"+e['votes'].length +
+                                                    "<p class='listPs'><b>Band: </b>"+e['username']+"</p>" +
+                                                    "<p class='listPs'><b>Votos: </b>"+e['votes'].length +
+                                                    "<p class='listPs'><b>Genre: </b>" + e['genre'] + "</p>" +
+                                                    "<p class='listPs'><b>Description: </b>"+e['description']+"</p>" +
                                                 "</div>" +
                                                 "<div class='hori3'>" +
                                                     "<input type='button' value='View band page' class='btn btn-primary viewArtist'>" +
@@ -203,19 +205,21 @@ function init(){
                         bands.push(bandName);
                         found = false;
                         base.append("<li>" +
-                                        "<div class='flat'>" +
-                                            "<div class='hori'>" +
-                                                "<input type='button' class='voteup' id="+e['username']+" value='+1'>" +
+                                            "<div class='flat'>" +
+                                                "<div class='hori'>" +
+                                                    "<input type='button' class='voteup' id="+e['username']+" value='+1'>" +
+                                                "</div>" +
+                                                "<div class='hori2'>" +
+                                                    "<p class='listPs'><b>Band: </b>"+e['username']+"</p>" +
+                                                    "<p class='listPs'><b>Votos: </b>"+e['votes'].length +
+                                                    "<p class='listPs'><b>Genre: </b>" + e['genre'] + "</p>" +
+                                                    "<p class='listPs'><b>Description: </b>"+e['description']+"</p>" +
+                                                "</div>" +
+                                                "<div class='hori3'>" +
+                                                    "<input type='button' value='View band page' class='btn btn-primary viewArtist'>" +
+                                                "</div>" +
                                             "</div>" +
-                                            "<div class='hori2'>" +
-                                                "<p class='listPs'><b>Band: </b>"+e['username']+"</p>" +
-                                                "<p class='listPs'><b>Votos: </b>"+e['votes'].length + 
-                                            "</div>" +
-                                            "<div class='hori3'>" +
-                                            "<input type='button' value='View band page' class='btn btn-primary viewArtist'>" +
-                                            "</div>" +
-                                        "</div>" +
-                                    "</li>");
+                                        "</li>");
                         e['votes'].forEach(vote =>{
                             if(vote == userName){
                                 found = true;
@@ -269,7 +273,9 @@ function init(){
                                                 "</div>" +
                                                 "<div class='hori2'>" +
                                                     "<p class='listPs'><b>Band: </b>"+e['username']+"</p>" +
-                                                    "<p class='listPs'><b>Votos: </b>"+e['votes'].length + 
+                                                    "<p class='listPs'><b>Votos: </b>"+e['votes'].length +
+                                                    "<p class='listPs'><b>Genre: </b>" + e['genre'] + "</p>" +
+                                                    "<p class='listPs'><b>Description: </b>"+e['description']+"</p>" +
                                                 "</div>" +
                                                 "<div class='hori3'>" +
                                                     "<input type='button' value='View band page' class='btn btn-primary viewArtist'>" +
@@ -297,19 +303,21 @@ function init(){
                         bands.push(bandName);
                         found = false;
                         base.append("<li>" +
-                                        "<div class='flat'>" +
-                                            "<div class='hori'>" +
-                                                "<input type='button' class='voteup' id="+e['username']+" value='+1'>" +
+                                            "<div class='flat'>" +
+                                                "<div class='hori'>" +
+                                                    "<input type='button' class='voteup' id="+e['username']+" value='+1'>" +
+                                                "</div>" +
+                                                "<div class='hori2'>" +
+                                                    "<p class='listPs'><b>Band: </b>"+e['username']+"</p>" +
+                                                    "<p class='listPs'><b>Votos: </b>"+e['votes'].length +
+                                                    "<p class='listPs'><b>Genre: </b>" + e['genre'] + "</p>" +
+                                                    "<p class='listPs'><b>Description: </b>"+e['description']+"</p>" +
+                                                "</div>" +
+                                                "<div class='hori3'>" +
+                                                    "<input type='button' value='View band page' class='btn btn-primary viewArtist'>" +
+                                                "</div>" +
                                             "</div>" +
-                                            "<div class='hori2'>" +
-                                                "<p class='listPs'><b>Band: </b>"+e['username']+"</p>" +
-                                                "<p class='listPs'><b>Votos: </b>"+e['votes'].length +
-                                            "</div>" +
-                                            "<div class='hori3'>" +
-                                            "<input type='button' value='View band page' class='btn btn-primary viewArtist'>" +
-                                            "</div>" +
-                                        "</div>" +
-                                    "</li>");
+                                        "</li>");
                         e['votes'].forEach(vote =>{
                             if(vote == userName){
                                 found = true;
