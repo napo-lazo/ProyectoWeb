@@ -71,9 +71,6 @@ $("#password_login").on('keypress',function(e){
     }
 })
 
-$("#guestLog").on("click",e=>{
-    window.location.replace("/list.html");
-})
 
 loginBtn.on("click", event =>{
     event.preventDefault();
