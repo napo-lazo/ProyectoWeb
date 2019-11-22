@@ -13,13 +13,13 @@ let searchBand = $("#searchBand")
 let removeBand = $("#clearBand")
 var banda = "";
 
-function sortByProperty(property){  
+function sortByProperty(property){
     return function(a,b){
-       if(a[property] < b[property])  
+       if(a[property].length < b[property].length)
           return 1;
-       else if(a[property] > b[property])  
+       else if(a[property].length > b[property].length)
           return -1;
-       return 0;  
+       return 0;
     }
 }
 
