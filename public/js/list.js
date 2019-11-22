@@ -152,7 +152,7 @@ function init(){
                                         "<p class='listPs'><b>Votos: </b>"+e['votes'].length +
                                         "</div>" +
                                         "<div class='hori3'>" +
-                                            "<input type='button' value='View band posts' class='btn btn-primary viewArtist'>" +
+                                            "<input type='button' value='View band page' class='btn btn-primary viewArtist'>" +
                                         "</div>" +
                                     "</div>" +
                                 "</li>");
@@ -202,7 +202,7 @@ function init(){
                                             "<p><b>Votos: </b>"+e['votes'].length +
                                         "</div>" +
                                         "<div class='hori3'>" +
-                                            "<input type='button' value='View band posts'>" +
+                                            "<input type='button' value='View band page'>" +
                                         "</div>" +
                                     "</div>" +
                                 "</li>");

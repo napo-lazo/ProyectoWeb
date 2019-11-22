@@ -30,7 +30,16 @@ function initUser(){
             console.log(result);
             result.sort(sortByProperty("time"));
             result.forEach(e => {
-                base.append("<li><div class='posts'><div class='flex'><p>Time: "+e['dateOfPublication']+"</p><p>Artist: "+e['publishedBy']+"</p></div><p class='title'>Title: "+e['title']+"</p><p>Description: "+e['description']+"</p></div></li>");
+                base.append("<li>" +
+                                "<div class='posts'>" +
+                                    "<div class='flex'>" +
+                                        "<p>Time: "+e['dateOfPublication']+"</p>" +
+                                        "<p>Artist: "+e['publishedBy']+"</p>" +
+                                    "</div>" +
+                                    "<p class='title'>Title: "+e['title']+"</p>" +
+                                    "<p>Description: "+e['description']+"</p>" +
+                                "</div>" +
+                            "</li>");
             });
         }
     })
@@ -52,7 +61,16 @@ function initArtist(){
             console.log(result);
             result.sort(sortByProperty("time"));
             result.forEach(e => {
-                base.append("<li><div class='posts'><div class='flex'><p>Time: "+e['dateOfPublication']+"</p><p>Artist: "+e['publishedBy']+"</p></div><p class='title'>Title: "+e['title']+"</p><p>Description: "+e['description']+"</p></div></li>");
+                base.append("<li>" +
+                                "<div class='posts'>" +
+                                    "<div class='flex'>" +
+                                        "<p>Time: "+e['dateOfPublication']+"</p>" +
+                                        "<p>Artist: "+e['publishedBy']+"</p>" +
+                                    "</div>" +
+                                    "<p class='title'>Title: "+e['title']+"</p>" +
+                                    "<p>Description: "+e['description']+"</p>" +
+                                "</div>" +
+                            "</li>");
             });
         }
     })
