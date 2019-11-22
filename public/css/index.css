@@ -31,7 +31,8 @@ h2 {
 
 .login{
     border-radius: 20px;
-    margin: 5% 35%;
+    margin: 5% 15%;
+    margin-top: 15%;
     text-align: center;
     background: #FFC140;
 }
@@ -40,6 +41,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 15px;
 }
 
 #user-feed-posts{
@@ -213,3 +215,8 @@ h1 { color: black; font-family: 'Raleway',sans-serif; font-size: 40px; font-weig
   margin:15px;
 }
 
+#loginButtons{
+  display: flex;
+  height: auto;
+  justify-content: space-evenly;
+}
