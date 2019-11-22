@@ -235,7 +235,7 @@ base.on("click", ".viewArtist", event =>{
     let band = $(mainDiv).find(".hori2").find("p")[0]
     let bandName = $(band).text().slice(6)
 
-    window.location.href = "/user-feed?band=" + bandName;
+    window.location.href = "/user-feed.html?band=" + bandName;
 
 });
 
