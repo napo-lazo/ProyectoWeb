@@ -151,6 +151,9 @@ function init(){
                                         "<p class='listPs'><b>Band: </b>"+e['username']+"</p>" +
                                         "<p class='listPs'><b>Votos: </b>"+e['votes'].length +
                                         "</div>" +
+                                        "<div class='hori3'>" +
+                                            "<input type='button' value='View band posts'>" +
+                                        "</div>" +
                                     "</div>" +
                                 "</li>");
                     e['votes'].forEach(vote =>{
