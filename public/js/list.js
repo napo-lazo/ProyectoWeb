@@ -230,8 +230,9 @@ function init(){
 
 base.on("click", ".viewArtist", event =>{
     event.preventDefault();
-
-    console.log("test")
+    console.log(event.target)
+    console.log($(event.target).parent())
+    // Cookies.set("band", $())
 
 });
 
