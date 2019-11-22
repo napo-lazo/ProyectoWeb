@@ -230,8 +230,11 @@ function init(){
 
 base.on("click", ".viewArtist", event =>{
     event.preventDefault();
-    console.log(event.target)
-    console.log($(event.target).parent())
+    let btn = event.target
+    let mainDiv = $(btn).parent().parent()
+    let band = $(mainDiv).find(".hori2").find("p")[0].text()
+    console.log(band)
+
     // Cookies.set("band", $())
 
 });
