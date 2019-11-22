@@ -255,6 +255,21 @@ app.get("/posts", (req, res) =>{
                 });
 });
 
+app.post("/artist-Posts", jsonParser, (req, res) =>{
+    let json = req.body;
+
+    PostList.getByArtist(json)
+                .then(posts =>{
+                    return res.status(200).json(posts);
+                })
+                .catch(err =>{
+                    res.statusMessage = "Something went wrong with the DB";
+                    return res.status(500).json({
+                        code: 500,
+                        message: "Something went wrong with the DB"
+                    })
+});
+
 app.post("/get-posts-favorite",(req,res)=>{
     let user = req.body['username'];
     AccountList.getLikes(user)
@@ -282,7 +297,7 @@ app.post("/get-posts-favorite",(req,res)=>{
                         message: "Something went wrong with the DB"
                     })
                 });
-})
+});
 
 app.post("/post", jsonParser, (req, res) =>{
 

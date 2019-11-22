@@ -1,4 +1,6 @@
 let base = $("#ul-list");
+let title = $('h1')[0];
+let btnSpace = $('#user-feed-posts');
 
 function sortByProperty(property){  
     return function(a,b){
@@ -34,5 +36,40 @@ function init(){
     })
 }
 
+function initArtist(){
+    base.html("");
 
-init();
+    let json = {
+        publishedBy : Cookies.get("username")
+    }
+    $.ajax({
+        url: "/artist-Posts",
+        method: "POST",
+        dataType:"JSON",
+        contentType: "application/json",
+        data: JSON.stringify(json),
+        success: (result) =>{
+            console.log(result);
+            result.forEach(e => {
+                base.append("<li><div class='posts'><div class='flex'><p>Time: "+e['dateOfPublication']+"</p><p>Artist: "+e['publishedBy']+"</p></div><p class='title'>Title: "+e['title']+"</p><p>Description: "+e['description']+"</p></div></li>");
+            });
+        }
+    })
+
+}
+
+btnSpace.on("click", ".btn", event =>{
+    window.location.href = "/postCreation.html";
+});
+
+if(Cookies.get("type") == "User"){
+    $(title).text("Posts from your favorite bands");
+    initUser();
+}
+else{
+    $(title).text("Your posts");
+    $(btnSpace).prepend('<input class="btn btn-primary" type="button" value="Create post"></input>');
+    initArtist();
+}
+
+
