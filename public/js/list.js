@@ -233,7 +233,7 @@ base.on("click",".voteup",function(e){
 
 init();
 
-userName = Cookies.get("connectedUser");
+userName = Cookies.get("username");
 
 if(Cookies.get("type") == "User"){
     $("#navbarDropdown").text(userName);
