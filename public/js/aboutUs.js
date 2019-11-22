@@ -5,5 +5,8 @@ if(Cookies.get("type") == "User"){
 }else if(Cookies.get("type") == "Artist"){
     $("#navbarDropdown").text(userName);
 }else{
-    //???
+    //$("#navbarDropdown").addClass("d-none");
+    $("#loginNavbar").removeClass("d-none");
+    $("#navBarFeed").addClass('disabled');
+    $("#navBarLog").text("Log In");
 }
