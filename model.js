@@ -27,7 +27,7 @@ let AccountList = {
 
     //for debuging
     getAll: function(){
-        return Account.find()
+        return Account.find({},{password:0})
                         .then(accounts =>{
                             return accounts;
                         })
@@ -37,7 +37,7 @@ let AccountList = {
     },
 
     getAllArtists: function(){
-        return Account.find({type:"Artist"})
+        return Account.find({type:"Artist"},{password:0})
                         .then(artists =>{
                             return artists;
                         })
@@ -47,7 +47,7 @@ let AccountList = {
     },
 
     getArtistsByCity: function(city){
-        return Account.find({type:"Artist",city:city})
+        return Account.find({type:"Artist",city:city},{password:0})
                         .then(artists =>{
                             return artists;
                         })
@@ -95,7 +95,6 @@ let AccountList = {
                         .catch(error =>{
                             return Error(error);
                         });
-                        
     },
 
     removeLike: function(band,user){
