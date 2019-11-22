@@ -13,7 +13,7 @@ function sortByProperty(property){
 }
 
 //TODO: DECIRLE AL USUARIO SI NO ESTA LOGED IN QUE NO PUEDE VER ESTA PAGINA
-function init(){
+function initUser(){
     base.html("");
     userName = Cookies.get("username");
     console.log(userName);
