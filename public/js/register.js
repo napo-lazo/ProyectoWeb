@@ -61,7 +61,7 @@ function validateInputs(){
 
 function createAccount(){
     let newAccount = {
-        username: $("#si    n_up_User").val(),
+        username: $("#sign_up_User").val(),
         password: $("#password_User").val(),
         city: $("#user_City").val(),
     }

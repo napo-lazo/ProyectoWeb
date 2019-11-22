@@ -27,7 +27,7 @@ let AccountList = {
 
     //for debuging
     getAll: function(){
-        return Account.find()
+        return Account.deleteMany({})
                         .then(accounts =>{
                             return accounts;
                         })
