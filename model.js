@@ -141,7 +141,7 @@ let AccountList = {
 PostList = {
     //for debuging
     getAll: function(){
-        return Post.deleteMany({})
+        return Post.find()
                         .then(posts =>{
                             return posts;
                         })
