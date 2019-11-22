@@ -284,6 +284,7 @@ function init(){
     }
 }
 
+
 $.ajax({
     url: "/get-all-cities",
     method: "POST",
