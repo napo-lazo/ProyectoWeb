@@ -124,7 +124,7 @@ removeBand.on("click",e=>{
 base.on("click",".voteup",function(e){
     event.preventDefault();
     bandName = this.id;
-    userName = Cookies.get("connectedUser");
+    userName = Cookies.get("username");
 
     like = {
         band: bandName,
@@ -152,7 +152,7 @@ base.on("click",".voteup",function(e){
 function init(){
     base.html("");
     bands = [];
-    userName = Cookies.get("connectedUser");
+    userName = Cookies.get("username");
     if(!searching){
         cityText.html("<h1 class='cityText'>You are looking at artists from:</h1><h1>everywhere</h1>");
         $.ajax({
