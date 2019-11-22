@@ -73,20 +73,21 @@ h2 {
     border:1px solid black;
     margin-top: 16px;
     width: 98%;
+    justify-content: space-evenly;
 }
 
 .hori{
-    width: 7%;
+    width: 10%;
     border-right: 1px solid black;
     text-align: center;
 }
 
 .hori2{
-  margin-right: 70%;
+  width: 70%;
 }
 
 .hori3{
-    width: 7%;
+    width: 15%;
     border-left: 1px solid black;
     text-align: center;
 }
