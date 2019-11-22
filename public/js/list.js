@@ -142,7 +142,17 @@ function init(){
                     console.log(e);
                     bandName = e['username'];
                     found = false;
-                    base.append("<li><div class='flat'><div class='hori'> <input type='button' class='voteup' id="+e['username']+" value='+1'></div><div class='hori2'><p class='listPs'><b>Band:</b>"+e['username']+"</p><p class='listPs'><b>Votos:</b>"+e['votes'].length+"</div></div></li>");
+                    base.append("<li>" +
+                                    "<div class='flat'>" +
+                                        "<div class='hori'>" +
+                                            "<input type='button' class='voteup' id="+e['username']+" value='+1'>" +
+                                        "</div>" +
+                                        "<div class='hori2'>" +
+                                        "<p class='listPs'><b>Band: </b>"+e['username']+"</p>" +
+                                        "<p class='listPs'><b>Votos: </b>"+e['votes'].length +
+                                        "</div>" +
+                                    "</div>" +
+                                "</li>");
                     e['votes'].forEach(vote =>{
                         if(vote == userName){
                             found = true;
@@ -186,7 +196,7 @@ function init(){
                                         "</div>" +
                                         "<div class='hori2'>" +
                                             "<p><b>Band: </b>"+e['username']+"</p>" +
-                                            "<p><b>Votos:</b>"+e['votes'].length +
+                                            "<p><b>Votos: </b>"+e['votes'].length +
                                         "</div>" +
                                         "<div class='hori3'>" +
                                             "<input type='button' value='View band posts'>" +
