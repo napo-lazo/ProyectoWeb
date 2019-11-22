@@ -202,7 +202,7 @@ function init(){
                                             "<p><b>Votos: </b>"+e['votes'].length +
                                         "</div>" +
                                         "<div class='hori3'>" +
-                                            "<input type='button' value='View band page'>" +
+                                            "<input type='button' value='View band page' class='btn btn-primary viewArtist'>" +
                                         "</div>" +
                                     "</div>" +
                                 "</li>");
