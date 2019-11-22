@@ -228,7 +228,12 @@ function init(){
     }
 }
 
-// base.on("click, ")
+base.on("click", ".viewArtist", event =>{
+    event.preventDefault();
+
+    console.log("test")
+
+});
 
 base.on("click",".voteup",function(e){
     event.preventDefault();
