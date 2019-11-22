@@ -296,7 +296,7 @@ $.ajax({
 
 init();
 
-userName = Cookies.get("connectedUser");
+userName = Cookies.get("username");
 
 if(Cookies.get("type") == "User"){
     $("#navbarDropdown").text(userName);

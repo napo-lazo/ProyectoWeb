@@ -79,7 +79,7 @@ if(Cookies.get("type") == "User"){
 }
 
 
-userName = Cookies.get("connectedUser");
+userName = Cookies.get("username");
 
 if(Cookies.get("type") == "User"){
     $("#navbarDropdown").text(userName);
