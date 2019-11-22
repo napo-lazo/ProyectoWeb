@@ -69,6 +69,8 @@ h2 {
 .flat{
     display: flex;
     border:1px solid black;
+    margin-top: 16px;
+    width: 98%;
 }
 
 .hori{
@@ -84,15 +86,17 @@ ul {
 .delete{
     color: white;
     background-color: red;
+    margin-top: 22%;
 }
 
 .vote{
     color:white;
     background-color: #00FF00;
+    margin-top: 22%;
 }
 
 .login{
-    background-color:orangered;
+    background-color:#FF9900;
     color:white;
 }
 
@@ -102,13 +106,17 @@ ul {
 
 h1 { color: black; font-family: 'Raleway',sans-serif; font-size: 40px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase; }
 
+.listPs{
+  margin-top: 10px;
+  margin-left: 5px;
+}
 
 .autocomplete {
   /*the container must be positioned relative:*/
   position: relative;
   display: inline-block;
 }
-input {
+.inputs {
   border: 1px solid transparent;
   background-color: #c5c7c9;
   padding: 10px;
@@ -157,7 +165,7 @@ input {
 #integrantes{
   display: flex;
   justify-content: space-around;
-
+  margin-left: 15%;
 }
 
 #napo{
