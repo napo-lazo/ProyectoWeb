@@ -228,6 +228,8 @@ function init(){
     }
 }
 
+// base.on("click, ")
+
 base.on("click",".voteup",function(e){
     event.preventDefault();
     bandName = this.id;
