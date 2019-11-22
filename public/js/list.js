@@ -156,7 +156,7 @@ function init(){
                                         "<p class='listPs'><b>Description: </b>"+e['description']+"</p>" +
                                     "</div>" +
                                     "<div class='hori3'>" +
-                                        "<input type='button' value='View band page' class='btn btn-primary viewArtist'>" +
+                                        "<input type='button' value='View band page' class='btn btn-primary btn-block viewArtist'>" +
                                     "</div>" +
                                 "</div>" +
                             "</li>");
@@ -208,7 +208,7 @@ function init(){
                                             "<p class='listPs'><b>Description: </b>"+e['description']+"</p>" +
                                         "</div>" +
                                         "<div class='hori3'>" +
-                                            "<input type='button' value='View band page' class='btn btn-primary viewArtist'>" +
+                                            "<input type='button' value='View band page' class='btn btn-primary btn-block viewArtist'>" +
                                         "</div>" +
                                     "</div>" +
                                 "</li>");

@@ -90,11 +90,13 @@ h2 {
     width: 15%;
     border-left: 1px solid black;
     text-align: center;
+    word-wrap: break-word;
+    padding: 2%;
 }
 
 .viewArtist{
-  margin-top: 30%;
-  margin-left: 20%;
+  margin-top: 20%;
+  text-align: center;
 }
 
 ul {
@@ -239,4 +241,8 @@ h1 { color: black; font-family: 'Raleway',sans-serif; font-size: 40px; font-weig
 
 #ul-list-posts{
   width: 50%;
+}
+
+.buttonFix{
+  max-width: 100%;
 }
