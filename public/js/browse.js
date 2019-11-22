@@ -354,6 +354,17 @@ $.ajax({
     }
 })
 
+base.on("click", ".viewArtist", event =>{
+    event.preventDefault();
+    let btn = event.target
+    let mainDiv = $(btn).parent().parent()
+    let band = $(mainDiv).find(".hori2").find("p")[0]
+    let bandName = $(band).text().slice(6)
+
+    window.location.href = "/user-feed.html?band=" + bandName;
+
+});
+
 init();
 
 userName = Cookies.get("username");
