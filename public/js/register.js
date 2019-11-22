@@ -139,7 +139,7 @@ registerBtn.on("click", event =>{
     }
 
     $.ajax({
-        url: "/posts",
+        url: "/accounts",
         method: "GET",
         success: (result) =>{
             console.log(result)
