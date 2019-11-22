@@ -129,7 +129,6 @@ function init(){
             })
             search = "/artist-city";
         }
-        console.log(userName);
         base.html("");
         $.ajax({
             url: search,
@@ -165,7 +164,6 @@ function init(){
         })
     }else{
         base.html("");
-        console.log(ciudad);
         let cityJson = {
             city: ciudad
         }
