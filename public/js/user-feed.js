@@ -77,6 +77,38 @@ function initArtist(){
 
 }
 
+function initBand(bandName){
+    base.html("");
+
+    let json = {
+        publishedBy : bandName
+    }
+
+    $.ajax({
+        url: "/artist-Posts",
+        method: "POST",
+        dataType:"JSON",
+        contentType: "application/json",
+        data: JSON.stringify(json),
+        success: (result) =>{
+            console.log(result);
+            result.sort(sortByProperty("time"));
+            result.forEach(e => {
+                base.append("<li>" +
+                                "<div class='posts'>" +
+                                    "<div class='flex'>" +
+                                        "<p>Time: "+e['dateOfPublication']+"</p>" +
+                                        "<p>Artist: "+e['publishedBy']+"</p>" +
+                                    "</div>" +
+                                    "<p class='title'>Title: "+e['title']+"</p>" +
+                                    "<p>Description: "+e['description']+"</p>" +
+                                "</div>" +
+                            "</li>");
+            });
+        }
+    })
+}
+
 btnSpace.on("click", ".btn", event =>{
     window.location.href = "/postCreation.html";
 });
@@ -84,7 +116,8 @@ btnSpace.on("click", ".btn", event =>{
 let url = new URL(window.location.href) 
 let bandName = url.searchParams.get("band");
 if(bandName){
-    console.log(bandName)
+    $(title).text("Posts from "+ bandName);
+    initBand(bandName)
 }
 else if(Cookies.get("type") == "User"){
     console.log("viendo usuario");
