@@ -208,7 +208,7 @@ base.on("click",".voteup",function(e){
     event.preventDefault();
     bandName = this.id;
     
-    userName = Cookies.get("connectedUser");
+    userName = Cookies.get("username");
 
     like = {
         band: bandName,
