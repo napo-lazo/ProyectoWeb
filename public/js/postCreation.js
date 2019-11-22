@@ -55,6 +55,7 @@ function publishPost(){
                 url: "/posts",
                 method: "GET",
                 success: (result) =>{
+                    window.location.replace("/user-feed.html");
                     console.log(result)
                 }
             });

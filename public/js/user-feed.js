@@ -1,4 +1,4 @@
-let base = $("#ul-list");
+let base = $("#ul-list-posts");
 let title = $('h1')[0];
 let btnSpace = $('#user-feed-posts');
 

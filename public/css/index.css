@@ -237,3 +237,6 @@ h1 { color: black; font-family: 'Raleway',sans-serif; font-size: 40px; font-weig
   justify-content: space-evenly;
 }
 
+#ul-list-posts{
+  width: 50%;
+}
